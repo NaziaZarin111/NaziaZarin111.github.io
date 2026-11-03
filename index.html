@@ -1,0 +1,530 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Nazia Zarin</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Nazia Zarin — computational biology researcher working on in silico drug repurposing and biomarker discovery in cancer. Publications, conference presentations, and CV.">
+<meta name="author" content="Nazia Zarin">
+<meta property="og:title" content="Nazia Zarin — Computational Biology Researcher">
+<meta property="og:description" content="In silico drug repurposing and biomarker discovery in cancer and comorbid diseases. 3 peer-reviewed publications, 4 international poster presentations.">
+<meta property="og:type" content="profile">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='9' cy='10' r='4' fill='%230f766e'/%3E%3Ccircle cx='23' cy='8' r='3' fill='%230f766e'/%3E%3Ccircle cx='17' cy='22' r='5' fill='%230f766e'/%3E%3Cpath d='M9 10L23 8M9 10L17 22M23 8L17 22' stroke='%230f766e' stroke-width='1.4'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400;0,600;0,700;1,400&family=Public+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: single quiet column, section rules like a journal article; one teal accent, network motif in the hero. */
+:root{
+  --bg:#fafaf7;
+  --surface:#ffffff;
+  --ink:#1c2927;
+  --muted:#5a6b66;
+  --accent:#0f766e;
+  --accent-soft:#e4f0ed;
+  --line:#dfe5df;
+  --font-display:"STIX Two Text", Georgia, "Times New Roman", serif;
+  --font-body:"Public Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono:"IBM Plex Mono", ui-monospace, "Cascadia Mono", Consolas, monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#101615; --surface:#171f1d; --ink:#e7ecea; --muted:#98a8a2;
+    --accent:#4cc3b0; --accent-soft:#1b2d2a; --line:#273431;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#101615; --surface:#171f1d; --ink:#e7ecea; --muted:#98a8a2;
+  --accent:#4cc3b0; --accent-soft:#1b2d2a; --line:#273431;
+  color-scheme: dark;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion: reduce){ html{scroll-behavior:auto} *{animation:none!important;transition:none!important} }
+body{
+  margin:0; background:var(--bg); color:var(--ink);
+  font-family:var(--font-body); font-size:16.5px; line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:var(--accent); text-decoration:none}
+a:hover{text-decoration:underline}
+a:focus-visible, button:focus-visible{outline:2px solid var(--accent); outline-offset:3px; border-radius:2px}
+.wrap{
+  max-width:880px; margin:0 auto;
+  padding-left:max(20px, env(safe-area-inset-left, 0px));
+  padding-right:max(20px, env(safe-area-inset-right, 0px));
+}
+/* ---------- Header ---------- */
+body::before{content:""; position:fixed; inset:0 0 auto; height:env(safe-area-inset-top,0px); z-index:60; background:var(--bg)}
+header.site{
+  position:sticky; top:env(safe-area-inset-top,0px); z-index:50;
+  background:color-mix(in srgb, var(--bg) 88%, transparent);
+  backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--line);
+}
+.nav{display:flex; align-items:center; gap:18px; flex-wrap:wrap; padding-block:12px}
+.nav .brand{font-family:var(--font-display); font-weight:700; font-size:1.1rem; color:var(--ink)}
+.nav .brand:hover{text-decoration:none; color:var(--accent)}
+.nav nav{display:flex; gap:16px; flex-wrap:wrap; margin-left:auto}
+.nav nav a{color:var(--muted); font-size:.86rem; font-weight:600; letter-spacing:.02em}
+.nav nav a:hover{color:var(--accent); text-decoration:none}
+/* ---------- Hero ---------- */
+.hero{padding-block:64px 48px; display:grid; grid-template-columns:1fr auto; gap:32px; align-items:center}
+.hero h1{
+  font-family:var(--font-display); font-weight:700;
+  font-size:clamp(2.1rem, 5.5vw, 3.1rem); line-height:1.12; margin:0 0 10px;
+  text-wrap:balance; letter-spacing:-.01em;
+}
+.kicker{
+  font-size:.8rem; font-weight:700; letter-spacing:.14em; text-transform:uppercase;
+  color:var(--accent); margin:0 0 14px;
+}
+.hero .lede{max-width:34em; color:var(--muted); font-size:1.06rem; margin:0}
+.hero .lede strong{color:var(--ink); font-weight:600}
+.hero-net{width:190px; max-width:100%}
+.hero-net svg{display:block; width:100%; height:auto}
+.net-edge{stroke:var(--line); stroke-width:1.4}
+.net-node{fill:var(--accent)}
+.net-node.dim{fill:var(--line)}
+.net-hub{fill:var(--accent); opacity:.16}
+.cta-row{display:flex; gap:12px; flex-wrap:wrap; margin-top:26px}
+.btn{
+  display:inline-flex; align-items:center; gap:8px;
+  padding:10px 18px; border-radius:6px; font-weight:600; font-size:.92rem;
+  border:1px solid var(--accent); color:var(--accent); background:transparent;
+}
+.btn:hover{background:var(--accent-soft); text-decoration:none}
+.btn.primary{background:var(--accent); color:var(--bg)}
+.btn.primary:hover{filter:brightness(1.08); background:var(--accent)}
+.avail{
+  display:inline-flex; align-items:center; gap:8px; margin-top:22px;
+  font-size:.84rem; font-weight:600; color:var(--accent);
+  background:var(--accent-soft); border:1px solid var(--line);
+  padding:6px 12px; border-radius:999px;
+}
+.avail::before{content:""; width:7px; height:7px; border-radius:50%; background:var(--accent)}
+/* ---------- Stats ---------- */
+.stats{
+  display:grid; grid-template-columns:repeat(4, 1fr); gap:1px;
+  background:var(--line); border-block:1px solid var(--line);
+  font-variant-numeric:tabular-nums;
+}
+.stats div{background:var(--bg); padding:18px 14px; text-align:center}
+.stats b{display:block; font-family:var(--font-display); font-size:1.7rem; font-weight:700; color:var(--ink); line-height:1.2}
+.stats span{font-size:.78rem; color:var(--muted); letter-spacing:.03em}
+/* ---------- Sections ---------- */
+section{padding-block:56px 8px}
+h2{
+  font-family:var(--font-display); font-weight:700; font-size:1.55rem;
+  margin:0 0 6px; letter-spacing:-.005em; text-wrap:balance;
+}
+.sec-head{display:flex; align-items:baseline; gap:14px; border-bottom:2px solid var(--ink); padding-bottom:10px; margin-bottom:28px}
+.sec-head .count{font-family:var(--font-mono); font-size:.82rem; color:var(--muted)}
+.prose{max-width:66ch}
+.prose p{margin:0 0 1em}
+/* ---------- Research interests ---------- */
+.interests{display:grid; grid-template-columns:repeat(2, 1fr); gap:18px}
+.interest{border:1px solid var(--line); background:var(--surface); border-radius:8px; padding:20px 22px; min-width:0}
+.interest h3{font-family:var(--font-display); font-size:1.08rem; font-weight:600; margin:0 0 8px}
+.interest p{margin:0; font-size:.93rem; color:var(--muted)}
+.interest .tags{margin-top:12px; display:flex; flex-wrap:wrap; gap:6px}
+.tag{font-family:var(--font-mono); font-size:.72rem; color:var(--accent); background:var(--accent-soft); padding:3px 8px; border-radius:4px}
+/* ---------- Publications ---------- */
+.pub{display:grid; grid-template-columns:64px 1fr; gap:18px; padding-block:22px; border-bottom:1px solid var(--line); min-width:0}
+.pub:last-child{border-bottom:none}
+.pub .year{font-family:var(--font-mono); font-size:.9rem; color:var(--muted); padding-top:3px}
+.pub h3{font-family:var(--font-display); font-size:1.12rem; font-weight:600; margin:0 0 6px; line-height:1.35}
+.pub h3 a{color:var(--ink)}
+.pub h3 a:hover{color:var(--accent); text-decoration:none}
+.pub .authors{font-size:.9rem; color:var(--muted); margin:0 0 4px}
+.pub .authors b{color:var(--ink); font-weight:600}
+.pub .venue{font-size:.9rem; margin:0; font-style:italic; color:var(--muted)}
+.pub .venue .publisher{font-style:normal}
+.pub .meta-row{display:flex; flex-wrap:wrap; gap:10px; align-items:center; margin-top:10px}
+.badge{
+  font-size:.72rem; font-weight:700; letter-spacing:.06em; text-transform:uppercase;
+  color:var(--accent); border:1px solid var(--accent); padding:2px 8px; border-radius:4px;
+}
+.doi{font-family:var(--font-mono); font-size:.78rem; color:var(--muted); word-break:break-all}
+.doi a{color:var(--muted); text-decoration:underline; text-decoration-color:var(--line); text-underline-offset:3px}
+.doi a:hover{color:var(--accent)}
+/* ---------- Timeline (conferences, education) ---------- */
+.timeline{list-style:none; margin:0; padding:0; border-left:2px solid var(--line)}
+.timeline li{position:relative; padding:0 0 26px 26px; min-width:0}
+.timeline li:last-child{padding-bottom:4px}
+.timeline li::before{
+  content:""; position:absolute; left:-6px; top:7px; width:10px; height:10px;
+  border-radius:50%; background:var(--accent); border:2px solid var(--bg);
+}
+.timeline .when{font-family:var(--font-mono); font-size:.78rem; color:var(--muted); display:block; margin-bottom:3px}
+.timeline h3{font-size:1.02rem; font-weight:600; margin:0 0 4px; font-family:var(--font-display)}
+.timeline p{margin:0; font-size:.92rem; color:var(--muted)}
+.timeline p b{color:var(--ink); font-weight:600}
+/* ---------- Two-column (education / experience) ---------- */
+.cols{display:grid; grid-template-columns:1fr 1fr; gap:48px}
+.cols h2{font-size:1.35rem}
+.edu-item{padding-block:18px; border-bottom:1px solid var(--line)}
+.edu-item:last-child{border-bottom:none}
+.edu-item .when{font-family:var(--font-mono); font-size:.78rem; color:var(--muted)}
+.edu-item h3{font-family:var(--font-display); font-size:1.05rem; font-weight:600; margin:4px 0 4px}
+.edu-item p{margin:0; font-size:.92rem; color:var(--muted)}
+.edu-item p b{color:var(--ink); font-weight:600}
+.edu-item ul{margin:8px 0 0; padding-left:18px; font-size:.92rem; color:var(--muted)}
+.edu-item ul li{margin-bottom:5px}
+/* ---------- Skills ---------- */
+.skills-grid{display:grid; grid-template-columns:repeat(3, 1fr); gap:18px}
+.skill-group{border:1px solid var(--line); background:var(--surface); border-radius:8px; padding:20px 22px; min-width:0}
+.skill-group h3{font-size:.8rem; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:var(--accent); margin:0 0 12px}
+.skill-group ul{list-style:none; margin:0; padding:0; font-size:.92rem}
+.skill-group li{padding:5px 0; border-bottom:1px dashed var(--line); color:var(--muted)}
+.skill-group li:last-child{border-bottom:none}
+.lang-table{width:100%; border-collapse:collapse; font-size:.9rem; margin-top:8px}
+.lang-table th, .lang-table td{text-align:left; padding:8px 10px; border-bottom:1px solid var(--line)}
+.lang-table th{font-size:.74rem; letter-spacing:.08em; text-transform:uppercase; color:var(--muted); font-weight:700}
+.lang-table td:first-child{font-weight:600}
+.cefr{font-family:var(--font-mono); color:var(--accent); font-weight:500}
+/* ---------- Contact / footer ---------- */
+footer{margin-top:72px; border-top:1px solid var(--line); background:var(--surface)}
+footer .inner{padding-block:48px 40px}
+footer h2{font-size:1.5rem; margin-bottom:10px}
+footer .prose{color:var(--muted)}
+.contact-links{display:flex; flex-wrap:wrap; gap:12px; margin-top:24px}
+.fineprint{margin-top:40px; padding-top:18px; border-top:1px solid var(--line); font-size:.78rem; color:var(--muted); display:flex; flex-wrap:wrap; gap:8px; justify-content:space-between}
+/* ---------- Responsive ---------- */
+@media (max-width:720px){
+  .hero{grid-template-columns:1fr; padding-block:44px 36px}
+  .hero-net{display:none}
+  .stats{grid-template-columns:repeat(2, 1fr)}
+  .interests{grid-template-columns:1fr}
+  .cols{grid-template-columns:1fr; gap:8px}
+  .skills-grid{grid-template-columns:1fr}
+  .pub{grid-template-columns:1fr; gap:4px}
+  .pub .year{padding-top:0}
+}
+</style>
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap nav">
+    <a class="brand" href="#top">Nazia Zarin</a>
+    <nav aria-label="Sections">
+      <a href="#research">Research</a>
+      <a href="#publications">Publications</a>
+      <a href="#conferences">Conferences</a>
+      <a href="#background">Background</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <div class="wrap">
+
+    <!-- ============ HERO ============ -->
+    <div class="hero">
+      <div>
+        <p class="kicker">Computational Biology · Bioinformatics · Drug Repurposing</p>
+        <h1>Finding biomarkers and repurposable drugs, <em>in silico</em>.</h1>
+        <p class="lede">
+          I am a graduate researcher in <strong>Biochemistry &amp; Biotechnology</strong> at the University of Barishal,
+          Bangladesh. I build end-to-end computational pipelines — differential gene expression, network pharmacology,
+          molecular docking, and molecular dynamics — to identify <strong>molecular biomarkers</strong> and
+          <strong>repurposable therapeutics</strong> for cancers and their comorbid diseases.
+        </p>
+        <div class="cta-row">
+          <a class="btn primary" href="assets/Nazia-Zarin-CV.pdf" target="_blank" rel="noopener">Download CV (PDF)</a>
+          <a class="btn" href="https://www.researchgate.net/profile/Nazia-Zarin-2" target="_blank" rel="noopener">ResearchGate</a>
+          <a class="btn" href="https://www.linkedin.com/in/nazia-zarin-18886b2b0" target="_blank" rel="noopener">LinkedIn</a>
+        </div>
+        <span class="avail">Seeking funded MS/PhD positions · Erasmus Mundus &amp; international programs</span>
+      </div>
+      <div class="hero-net" aria-hidden="true">
+        <svg viewBox="0 0 190 210" role="img" aria-label="">
+          <circle class="net-hub" cx="95" cy="100" r="58"/>
+          <line class="net-edge" x1="95" y1="100" x2="40" y2="40"/>
+          <line class="net-edge" x1="95" y1="100" x2="150" y2="35"/>
+          <line class="net-edge" x1="95" y1="100" x2="165" y2="120"/>
+          <line class="net-edge" x1="95" y1="100" x2="60" y2="175"/>
+          <line class="net-edge" x1="95" y1="100" x2="135" y2="180"/>
+          <line class="net-edge" x1="40" y1="40" x2="150" y2="35"/>
+          <line class="net-edge" x1="150" y1="35" x2="165" y2="120"/>
+          <line class="net-edge" x1="60" y1="175" x2="135" y2="180"/>
+          <line class="net-edge" x1="40" y1="40" x2="22" y2="105"/>
+          <line class="net-edge" x1="22" y1="105" x2="60" y2="175"/>
+          <line class="net-edge" x1="22" y1="105" x2="95" y2="100"/>
+          <circle class="net-node" cx="95" cy="100" r="13"/>
+          <circle class="net-node" cx="40" cy="40" r="8"/>
+          <circle class="net-node" cx="150" cy="35" r="7"/>
+          <circle class="net-node dim" cx="165" cy="120" r="6"/>
+          <circle class="net-node" cx="60" cy="175" r="9"/>
+          <circle class="net-node dim" cx="135" cy="180" r="6"/>
+          <circle class="net-node dim" cx="22" cy="105" r="7"/>
+        </svg>
+      </div>
+    </div>
+
+    <!-- ============ STATS ============ -->
+    <div class="stats" role="list" aria-label="Research record at a glance">
+      <div role="listitem"><b>3</b><span>Peer-reviewed publications</span></div>
+      <div role="listitem"><b>2</b><span>First-author papers</span></div>
+      <div role="listitem"><b>4</b><span>International poster presentations</span></div>
+      <div role="listitem"><b>3.62</b><span>BSc CGPA / 4.00 · First Class</span></div>
+    </div>
+
+    <!-- ============ RESEARCH ============ -->
+    <section id="research">
+      <div class="sec-head">
+        <h2>Research interests</h2>
+      </div>
+      <div class="prose">
+        <p>
+          My work sits at the intersection of bioinformatics and translational medicine: using public omics data and
+          structure-based methods to shorten the path from disease biology to candidate therapy. My master's thesis
+          develops <em>an integrated in silico framework for identifying biomarkers and repurposable drugs in
+          colorectal cancer</em>, supervised by Dr. Shaila Haque.
+        </p>
+      </div>
+      <div class="interests" style="margin-top:28px">
+        <div class="interest">
+          <h3>Drug repurposing &amp; network pharmacology</h3>
+          <p>Mapping approved drugs onto disease modules through drug–gene interaction networks to propose low-cost therapeutic candidates for cancers and infectious disease.</p>
+          <div class="tags"><span class="tag">DGIdb</span><span class="tag">PPI networks</span><span class="tag">hub genes</span></div>
+        </div>
+        <div class="interest">
+          <h3>Molecular docking &amp; dynamics</h3>
+          <p>Structure-based validation of candidate compounds — binding-affinity screening followed by molecular dynamics simulation to assess complex stability.</p>
+          <div class="tags"><span class="tag">docking</span><span class="tag">MD simulation</span><span class="tag">binding affinity</span></div>
+        </div>
+        <div class="interest">
+          <h3>Transcriptomics &amp; biomarker discovery</h3>
+          <p>Differential gene expression analysis of public datasets to nominate diagnostic and prognostic biomarkers, from data curation through enrichment and survival context.</p>
+          <div class="tags"><span class="tag">GEO</span><span class="tag">DEG analysis</span><span class="tag">enrichment</span></div>
+        </div>
+        <div class="interest">
+          <h3>Comorbidity mechanisms</h3>
+          <p>Shared molecular signatures between co-occurring diseases — lung cancer &amp; tuberculosis, triple-negative breast cancer &amp; type 2 diabetes, T2D &amp; Parkinson's — as joint therapeutic targets.</p>
+          <div class="tags"><span class="tag">NSCLC–TB</span><span class="tag">TNBC–T2D</span><span class="tag">shared DEGs</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PUBLICATIONS ============ -->
+    <section id="publications">
+      <div class="sec-head">
+        <h2>Publications</h2>
+        <span class="count">3 peer-reviewed</span>
+      </div>
+
+      <article class="pub">
+        <div class="year">2026</div>
+        <div>
+          <h3><a href="https://doi.org/10.1007/s40203-026-00767-5" target="_blank" rel="noopener">In silico insights into shared molecular mechanisms and drug repurposing for non-small cell lung cancer and tuberculosis</a></h3>
+          <p class="authors"><b>Nazia Zarin</b>, Nafis Fuad Shahir, Tasnim Hosen Tanha, et&nbsp;al.</p>
+          <p class="venue">In Silico Pharmacology, vol. 14, art. 260 · <span class="publisher">Springer Nature</span></p>
+          <div class="meta-row">
+            <span class="badge">First author</span>
+            <span class="doi"><a href="https://doi.org/10.1007/s40203-026-00767-5" target="_blank" rel="noopener">doi:10.1007/s40203-026-00767-5</a></span>
+          </div>
+        </div>
+      </article>
+
+      <article class="pub">
+        <div class="year">2026</div>
+        <div>
+          <h3><a href="https://doi.org/10.1177/11779322261488174" target="_blank" rel="noopener">In silico identification of key genes and repurposable drugs for triple-negative breast cancer</a></h3>
+          <p class="authors"><b>Nazia Zarin</b>, Tasnim Hosen Tanha, Mimuna Nishad, et&nbsp;al.</p>
+          <p class="venue">Bioinformatics and Biology Insights · <span class="publisher">SAGE Publishing</span></p>
+          <div class="meta-row">
+            <span class="badge">First author</span>
+            <span class="doi"><a href="https://doi.org/10.1177/11779322261488174" target="_blank" rel="noopener">doi:10.1177/11779322261488174</a></span>
+          </div>
+        </div>
+      </article>
+
+      <article class="pub">
+        <div class="year">2025</div>
+        <div>
+          <h3><a href="https://doi.org/10.1080/07391102.2025.2593504" target="_blank" rel="noopener">Computational analysis and molecular dynamics insights into deleterious SNPs of the <span style="font-style:italic">HFE</span> gene</a></h3>
+          <p class="authors">Md Sajedul Islam, Tasnim Hosen Tanha, <b>Nazia Zarin</b>, et&nbsp;al.</p>
+          <p class="venue">Journal of Biomolecular Structure and Dynamics, vol. 44, issue 9 · <span class="publisher">Taylor &amp; Francis</span></p>
+          <div class="meta-row">
+            <span class="doi"><a href="https://doi.org/10.1080/07391102.2025.2593504" target="_blank" rel="noopener">doi:10.1080/07391102.2025.2593504</a></span>
+          </div>
+        </div>
+      </article>
+
+      <p style="font-size:.86rem; color:var(--muted); margin-top:18px">
+        Full list and preprints on
+        <a href="https://www.researchgate.net/profile/Nazia-Zarin-2" target="_blank" rel="noopener">ResearchGate</a>.
+      </p>
+    </section>
+
+    <!-- ============ CONFERENCES ============ -->
+    <section id="conferences">
+      <div class="sec-head">
+        <h2>Conference presentations</h2>
+        <span class="count">4 posters · presenting author</span>
+      </div>
+      <ul class="timeline">
+        <li>
+          <span class="when">Apr 2026 · Dhaka, Bangladesh</span>
+          <h3>6th International Young Biotechnologist Congress</h3>
+          <p>Poster: <b>“Exploring Molecular Biomarkers &amp; Therapeutic Agents of Colorectal Cancer (CRC).”</b> N. Zarin (presenter), S. Haque.</p>
+        </li>
+        <li>
+          <span class="when">Dec 2025 · Jagannath University, Dhaka</span>
+          <h3>International Conference on Life and Earth Sciences</h3>
+          <p>Poster: <b>“Exploring Molecular Signatures and Therapeutic Agents of Triple-Negative Breast Cancer and Type 2 Diabetes.”</b> N. Zarin (presenter), M. Nishad.</p>
+        </li>
+        <li>
+          <span class="when">Oct 2025 · SUST, Sylhet</span>
+          <h3>International Conference on Life Science</h3>
+          <p>Poster: <b>“Exploring Molecular Signatures and Therapeutic Agents of Non-Small Cell Lung Cancer and Tuberculosis.”</b> N. Zarin (presenter).</p>
+        </li>
+        <li>
+          <span class="when">Jul 2025 · Rajshahi University</span>
+          <h3>RUEC 1st International Research Conference</h3>
+          <p>Poster: <b>“Exploring Molecular Signatures and Therapeutic Agents of Type 2 Diabetes and Parkinson's Disease.”</b> N. Zarin (presenter), T. H. Tanha, M. Nishad, S. Haque.</p>
+        </li>
+      </ul>
+    </section>
+
+    <!-- ============ BACKGROUND ============ -->
+    <section id="background">
+      <div class="sec-head">
+        <h2>Background</h2>
+      </div>
+      <div class="cols">
+        <div>
+          <h2 style="border:none; font-size:1.2rem; margin-bottom:4px">Education</h2>
+          <div class="edu-item">
+            <span class="when">May 2025 – present · EQF level 7</span>
+            <h3>MS in Biochemistry &amp; Biotechnology</h3>
+            <p><b>University of Barishal</b>, Bangladesh</p>
+            <ul>
+              <li>Thesis: <i>An Integrated In Silico Framework for Identifying Biomarkers and Repurposable Drugs in Colorectal Cancer</i></li>
+              <li>Supervisor: Dr. Shaila Haque</li>
+            </ul>
+          </div>
+          <div class="edu-item">
+            <span class="when">Feb 2020 – May 2025 · EQF level 6 · 128 credits</span>
+            <h3>BSc in Biochemistry &amp; Biotechnology</h3>
+            <p><b>University of Barishal</b>, Bangladesh</p>
+            <ul>
+              <li>First Class — CGPA 3.62 / 4.00</li>
+            </ul>
+          </div>
+        </div>
+        <div>
+          <h2 style="border:none; font-size:1.2rem; margin-bottom:4px">Experience &amp; training</h2>
+          <div class="edu-item">
+            <span class="when">Sep 2025 – present</span>
+            <h3>Research Assistant — Dr. Shaila Haque</h3>
+            <p><b>University of Barishal</b>, Dept. of Biochemistry &amp; Biotechnology</p>
+            <ul>
+              <li>Authored multiple research manuscripts as lead writer under direct supervision</li>
+              <li>Built complete in silico pipelines: docking, network pharmacology, DGE analysis, and MD simulation — from data curation to manuscript</li>
+              <li>Coordinated interdisciplinary teams and synthesized findings for international conferences</li>
+            </ul>
+          </div>
+          <div class="edu-item">
+            <span class="when">Jun 2024 · Dhaka</span>
+            <h3>Molecular Biology Training</h3>
+            <p><b>Child Health Research Foundation (CHRF)</b></p>
+            <ul>
+              <li>End-to-end PCR workflows: primer design, conventional PCR &amp; qPCR, gel electrophoresis and imaging</li>
+              <li>DNA/RNA extraction from clinical specimens under standard biosafety protocols</li>
+              <li>Structured clinical exposure at a major pediatric hospital</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SKILLS ============ -->
+    <section id="skills">
+      <div class="sec-head">
+        <h2>Skills</h2>
+      </div>
+      <div class="skills-grid">
+        <div class="skill-group">
+          <h3>Computational</h3>
+          <ul>
+            <li>Differential gene expression analysis</li>
+            <li>PPI network &amp; hub-gene analysis</li>
+            <li>Network pharmacology</li>
+            <li>Molecular docking</li>
+            <li>Molecular dynamics simulation</li>
+            <li>Functional enrichment analysis</li>
+            <li>Research data curation &amp; management</li>
+          </ul>
+        </div>
+        <div class="skill-group">
+          <h3>Laboratory</h3>
+          <ul>
+            <li>Primer design</li>
+            <li>Conventional PCR &amp; qPCR</li>
+            <li>DNA &amp; RNA extraction</li>
+            <li>Gel electrophoresis &amp; imaging</li>
+            <li>Clinical specimen handling</li>
+            <li>Laboratory biosafety protocols</li>
+          </ul>
+        </div>
+        <div class="skill-group">
+          <h3>Research &amp; communication</h3>
+          <ul>
+            <li>Academic manuscript writing</li>
+            <li>Poster design &amp; presentation</li>
+            <li>Research proposal development</li>
+            <li>Mentoring &amp; knowledge transfer</li>
+            <li>Project &amp; timeline management</li>
+          </ul>
+        </div>
+      </div>
+
+      <h2 style="border:none; font-size:1.2rem; margin:40px 0 4px">Languages</h2>
+      <div style="overflow-x:auto">
+        <table class="lang-table">
+          <thead>
+            <tr><th>Language</th><th>Listening</th><th>Reading</th><th>Speaking</th><th>Writing</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Bengali</td><td colspan="4">Native</td></tr>
+            <tr><td>English</td><td class="cefr">C2</td><td class="cefr">C2</td><td class="cefr">C1</td><td class="cefr">C1</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+  </div>
+</main>
+
+<!-- ============ CONTACT ============ -->
+<footer id="contact">
+  <div class="wrap inner">
+    <h2>Get in touch</h2>
+    <div class="prose">
+      <p>
+        I am actively applying to funded MS and PhD positions in bioinformatics, computational biology, and
+        biotechnology — including Erasmus Mundus Joint Masters — and am glad to discuss research fit,
+        collaborations, or my published work.
+      </p>
+    </div>
+    <div class="contact-links">
+      <a class="btn primary" href="https://www.linkedin.com/in/nazia-zarin-18886b2b0" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="btn" href="https://www.researchgate.net/profile/Nazia-Zarin-2" target="_blank" rel="noopener">ResearchGate</a>
+      <a class="btn" href="assets/Nazia-Zarin-CV.pdf" target="_blank" rel="noopener">Europass CV (PDF)</a>
+    </div>
+    <div class="fineprint">
+      <span>© 2026 Nazia Zarin · University of Barishal, Bangladesh</span>
+      <span>Last updated November 2026</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

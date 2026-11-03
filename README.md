@@ -1,0 +1,39 @@
+# Nazia Zarin — Academic Portfolio
+
+Personal academic website for MS/PhD and Erasmus Mundus funding applications. A single static page (`index.html`) with no build step — ready for GitHub Pages.
+
+## Deploy to GitHub Pages
+
+1. Create a GitHub repository named **`<username>.github.io`** (e.g. `naziazarin.github.io`) for the site to live at the root URL, or any repo name for `https://<username>.github.io/<repo>/`.
+2. Push this folder:
+   ```bash
+   git remote add origin https://github.com/<username>/<repo>.git
+   git push -u origin master
+   ```
+3. On GitHub: **Settings → Pages → Source: Deploy from a branch → `master` / root → Save.**
+4. The site is live in ~1 minute at the URL shown on that page.
+
+## Before going live — personalize
+
+- **Email**: add an academic/professional email to the Contact section in `index.html` (search for `contact-links`). Committees expect a direct email.
+- **Google Scholar / ORCID**: create profiles and add buttons next to ResearchGate (ORCID is required by most European applications).
+- **Photo**: an optional professional headshot can go in the hero (`assets/photo.jpg`).
+- **CV**: replace `assets/Nazia-Zarin-CV.pdf` whenever the CV is updated.
+
+## Updating content
+
+Everything is in `index.html`:
+
+| Section | What to update |
+|---|---|
+| Hero stats | Counts of publications / posters |
+| Publications | Add new `<article class="pub">` blocks, newest first |
+| Conferences | Add new `<li>` to the timeline, newest first |
+| Footer | "Last updated" date |
+
+## Structure
+
+```
+index.html              — the whole site (HTML + CSS, no JS needed)
+assets/Nazia-Zarin-CV.pdf — downloadable Europass CV
+```
