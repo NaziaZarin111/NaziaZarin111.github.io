@@ -13,7 +13,7 @@
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='9' cy='10' r='4' fill='%230f766e'/%3E%3Ccircle cx='23' cy='8' r='3' fill='%230f766e'/%3E%3Ccircle cx='17' cy='22' r='5' fill='%230f766e'/%3E%3Cpath d='M9 10L23 8M9 10L17 22M23 8L17 22' stroke='%230f766e' stroke-width='1.4'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:ital,wght@0,400;0,600;0,700;1,400&family=Public+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,400..700;1,7..72,400..700&family=Fira+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Fira+Code:wght@400;500&family=Silkscreen:wght@400;700&display=swap">
 <style>
 /* Layout: single quiet column, section rules like a journal article; one teal accent, network motif in the hero. */
 :root{
@@ -24,9 +24,10 @@
   --accent:#0f766e;
   --accent-soft:#e4f0ed;
   --line:#dfe5df;
-  --font-display:"STIX Two Text", Georgia, "Times New Roman", serif;
-  --font-body:"Public Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
-  --font-mono:"IBM Plex Mono", ui-monospace, "Cascadia Mono", Consolas, monospace;
+  --font-display:"Literata", Georgia, "Times New Roman", serif;
+  --font-body:"Fira Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono:"Fira Code", ui-monospace, "Cascadia Mono", Consolas, monospace;
+  --font-pixel:"Silkscreen", "Fira Code", monospace;
 }
 @media (prefers-color-scheme: dark){
   :root:not([data-theme="light"]){
@@ -78,8 +79,8 @@ header.site{
   text-wrap:balance; letter-spacing:-.01em;
 }
 .kicker{
-  font-size:.8rem; font-weight:700; letter-spacing:.14em; text-transform:uppercase;
-  color:var(--accent); margin:0 0 14px;
+  font-family:var(--font-pixel); font-size:.72rem; font-weight:400; letter-spacing:.06em;
+  text-transform:uppercase; color:var(--accent); margin:0 0 14px;
 }
 .hero .lede{max-width:34em; color:var(--muted); font-size:1.06rem; margin:0}
 .hero .lede strong{color:var(--ink); font-weight:600}
@@ -121,7 +122,7 @@ h2{
   margin:0 0 6px; letter-spacing:-.005em; text-wrap:balance;
 }
 .sec-head{display:flex; align-items:baseline; gap:14px; border-bottom:2px solid var(--ink); padding-bottom:10px; margin-bottom:28px}
-.sec-head .count{font-family:var(--font-mono); font-size:.82rem; color:var(--muted)}
+.sec-head .count{font-family:var(--font-pixel); font-size:.66rem; color:var(--muted)}
 .prose{max-width:66ch}
 .prose p{margin:0 0 1em}
 /* ---------- Research interests ---------- */
@@ -185,6 +186,25 @@ h2{
 .lang-table th{font-size:.74rem; letter-spacing:.08em; text-transform:uppercase; color:var(--muted); font-weight:700}
 .lang-table td:first-child{font-weight:600}
 .cefr{font-family:var(--font-mono); color:var(--accent); font-weight:500}
+/* ---------- Galleries (conference photos, sketchbook) ---------- */
+.gallery{display:grid; grid-template-columns:repeat(4, 1fr); gap:14px; margin-top:26px}
+.gallery.g3{grid-template-columns:repeat(3, 1fr)}
+.frame{border:1px solid var(--line); background:var(--surface); border-radius:6px; padding:9px 9px 11px; margin:0; min-width:0}
+.frame .ph{
+  aspect-ratio:4/3; max-width:100%; border:1.5px dashed var(--line); border-radius:4px;
+  display:flex; align-items:center; justify-content:center;
+  background:var(--accent-soft); color:var(--muted);
+}
+.frame .ph span{font-family:var(--font-pixel); font-size:.6rem; text-align:center; padding:0 10px; line-height:1.8}
+.frame img{display:block; width:100%; aspect-ratio:4/3; object-fit:cover; border-radius:4px}
+.frame figcaption{font-size:.76rem; color:var(--muted); margin-top:8px; line-height:1.45}
+.frame figcaption b{color:var(--ink); font-weight:600}
+.gallery-note{font-size:.84rem; color:var(--muted); margin-top:14px}
+/* ---------- Beyond the lab ---------- */
+.beyond-sub{font-family:var(--font-pixel); font-size:.72rem; color:var(--accent); text-transform:uppercase; letter-spacing:.05em; margin:0 0 10px}
+.shelf{display:flex; align-items:flex-end; gap:5px; height:112px; margin-top:22px; padding:0 12px; border-bottom:7px solid var(--line); max-width:420px}
+.shelf i{display:block; border-radius:3px 3px 0 0; background:var(--accent); flex:0 0 auto}
+.shelf i.b2{background:var(--muted)} .shelf i.b3{background:var(--line)}
 /* ---------- Contact / footer ---------- */
 footer{margin-top:72px; border-top:1px solid var(--line); background:var(--surface)}
 footer .inner{padding-block:48px 40px}
@@ -200,6 +220,7 @@ footer .prose{color:var(--muted)}
   .interests{grid-template-columns:1fr}
   .cols{grid-template-columns:1fr; gap:8px}
   .skills-grid{grid-template-columns:1fr}
+  .gallery, .gallery.g3{grid-template-columns:repeat(2, 1fr)}
   .pub{grid-template-columns:1fr; gap:4px}
   .pub .year{padding-top:0}
 }
@@ -216,6 +237,7 @@ footer .prose{color:var(--muted)}
       <a href="#conferences">Conferences</a>
       <a href="#background">Background</a>
       <a href="#skills">Skills</a>
+      <a href="#beyond">Beyond the lab</a>
       <a href="#contact">Contact</a>
     </nav>
   </div>
@@ -227,7 +249,7 @@ footer .prose{color:var(--muted)}
     <!-- ============ HERO ============ -->
     <div class="hero">
       <div>
-        <p class="kicker">Computational Biology · Bioinformatics · Drug Repurposing</p>
+        <p class="kicker">Computational biology researcher · Artist · Reader</p>
         <h1>Finding biomarkers and repurposable drugs, <em>in silico</em>.</h1>
         <p class="lede">
           I am a graduate researcher in <strong>Biochemistry &amp; Biotechnology</strong> at the University of Barishal,
@@ -392,6 +414,26 @@ footer .prose{color:var(--muted)}
           <p>Poster: <b>“Exploring Molecular Signatures and Therapeutic Agents of Type 2 Diabetes and Parkinson's Disease.”</b> N. Zarin (presenter), T. H. Tanha, M. Nishad, S. Haque.</p>
         </li>
       </ul>
+
+      <h2 style="border:none; font-size:1.2rem; margin:44px 0 0">From the poster sessions</h2>
+      <div class="gallery">
+        <figure class="frame">
+          <div class="ph"><span>photo slot<br>assets/photos/iybc-2026.jpg</span></div>
+          <figcaption><b>IYBC 2026</b> — presenting the colorectal cancer poster, Dhaka</figcaption>
+        </figure>
+        <figure class="frame">
+          <div class="ph"><span>photo slot<br>assets/photos/icles-2025.jpg</span></div>
+          <figcaption><b>ICLES 2025</b> — TNBC &amp; type 2 diabetes poster, Jagannath University</figcaption>
+        </figure>
+        <figure class="frame">
+          <div class="ph"><span>photo slot<br>assets/photos/icls-2025.jpg</span></div>
+          <figcaption><b>ICLS 2025</b> — NSCLC &amp; tuberculosis poster, SUST Sylhet</figcaption>
+        </figure>
+        <figure class="frame">
+          <div class="ph"><span>photo slot<br>assets/photos/ruec-2025.jpg</span></div>
+          <figcaption><b>RUEC 2025</b> — T2D &amp; Parkinson's poster, Rajshahi University</figcaption>
+        </figure>
+      </div>
     </section>
 
     <!-- ============ BACKGROUND ============ -->
@@ -498,6 +540,50 @@ footer .prose{color:var(--muted)}
             <tr><td>English</td><td class="cefr">C2</td><td class="cefr">C2</td><td class="cefr">C1</td><td class="cefr">C1</td></tr>
           </tbody>
         </table>
+      </div>
+    </section>
+
+    <!-- ============ BEYOND THE LAB ============ -->
+    <section id="beyond">
+      <div class="sec-head">
+        <h2>Beyond the lab</h2>
+        <span class="count">sketchbook · bookshelf</span>
+      </div>
+      <div class="cols">
+        <div>
+          <p class="beyond-sub">The sketchbook</p>
+          <div class="prose">
+            <p>
+              Drawing came before the science. A sketchbook is where I learned to look at structure — and the
+              patience it takes to render a form faithfully by hand turns out to be the same patience a protein
+              model or an interaction network asks for. The two habits still feed each other.
+            </p>
+          </div>
+          <div class="gallery g3">
+            <figure class="frame">
+              <div class="ph"><span>artwork slot<br>assets/art/01.jpg</span></div>
+            </figure>
+            <figure class="frame">
+              <div class="ph"><span>artwork slot<br>assets/art/02.jpg</span></div>
+            </figure>
+            <figure class="frame">
+              <div class="ph"><span>artwork slot<br>assets/art/03.jpg</span></div>
+            </figure>
+          </div>
+        </div>
+        <div>
+          <p class="beyond-sub">The bookshelf</p>
+          <div class="prose">
+            <p>
+              I read constantly — fiction, science writing, and whatever else follows me home. Choosing which
+              favourites to admit to publicly has proven harder than any enrichment analysis; a properly
+              annotated shelf is forthcoming.
+            </p>
+          </div>
+          <div class="shelf" aria-hidden="true">
+            <i style="width:22px;height:78px"></i><i class="b2" style="width:16px;height:92px"></i><i style="width:28px;height:64px"></i><i class="b3" style="width:14px;height:84px"></i><i style="width:19px;height:96px"></i><i class="b2" style="width:24px;height:58px"></i><i class="b3" style="width:17px;height:88px"></i><i style="width:15px;height:70px"></i><i class="b2" style="width:26px;height:82px"></i><i class="b3" style="width:18px;height:60px"></i><i style="width:21px;height:90px"></i>
+          </div>
+        </div>
       </div>
     </section>
 

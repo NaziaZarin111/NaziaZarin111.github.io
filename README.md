@@ -18,6 +18,9 @@ Personal academic website for MS/PhD and Erasmus Mundus funding applications. A 
 - **Email**: add an academic/professional email to the Contact section in `index.html` (search for `contact-links`). Committees expect a direct email.
 - **Google Scholar**: create a profile and add a button next to ResearchGate.
 - **Photo**: an optional professional headshot can go in the hero (`assets/photo.jpg`).
+- **Conference photos**: drop images at `assets/photos/iybc-2026.jpg`, `icles-2025.jpg`, `icls-2025.jpg`, `ruec-2025.jpg`, then replace each placeholder `<div class="ph">…</div>` in `index.html` with `<img src="assets/photos/….jpg" alt="Nazia presenting her poster at …">`.
+- **Artwork**: drop scans at `assets/art/01.jpg` … `03.jpg` and swap the placeholders the same way.
+- **Bookshelf**: the "Beyond the lab" section has a placeholder note — add her favorite titles when she picks them.
 - **CV**: replace `assets/Nazia-Zarin-CV.pdf` whenever the CV is updated.
 
 ## Updating content
