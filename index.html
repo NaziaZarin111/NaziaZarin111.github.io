@@ -271,6 +271,47 @@ footer h2{font-size:1.5rem; margin-bottom:10px}
 footer .prose{color:var(--muted)}
 .contact-links{display:flex; flex-wrap:wrap; gap:12px; margin-top:24px}
 .fineprint{margin-top:40px; padding-top:18px; border-top:1px solid var(--line); font-size:.78rem; color:var(--muted); display:flex; flex-wrap:wrap; gap:8px; justify-content:space-between}
+/* ---------- Liveliness ---------- */
+.hero{background:radial-gradient(560px 320px at 82% 18%, var(--accent-soft) 0%, transparent 70%)}
+@keyframes rise{from{opacity:0; transform:translateY(16px)} to{opacity:1; transform:none}}
+.hero .kicker{animation:rise .55s .05s ease-out both}
+.hero h1{animation:rise .55s .12s ease-out both}
+.hero .lede{animation:rise .55s .2s ease-out both}
+.hero .cta-row{animation:rise .55s .28s ease-out both}
+.hero .avail{animation:rise .55s .36s ease-out both}
+.hero-net{animation:rise .7s .3s ease-out both}
+.net-node{transform-box:fill-box; transform-origin:center; animation:bob 5s ease-in-out infinite}
+.net-node:nth-of-type(even){animation-delay:1.3s}
+.net-node:nth-of-type(3n){animation-delay:2.4s}
+@keyframes bob{0%,100%{transform:translateY(0)} 50%{transform:translateY(-5px)}}
+.net-hub{transform-box:fill-box; transform-origin:center; animation:hubpulse 4.5s ease-in-out infinite}
+@keyframes hubpulse{0%,100%{transform:scale(1); opacity:.16} 50%{transform:scale(1.07); opacity:.26}}
+.helix{animation:breathe 6s ease-in-out infinite}
+@keyframes breathe{0%,100%{opacity:.45} 50%{opacity:.72}}
+.avail::before{animation:dotpulse 2.4s ease-in-out infinite}
+@keyframes dotpulse{0%,100%{transform:scale(1); opacity:1} 50%{transform:scale(1.5); opacity:.55}}
+.sec-head::before{animation:leafsway 6s ease-in-out infinite}
+@keyframes leafsway{0%,100%{transform:rotate(-45deg)} 50%{transform:rotate(-35deg)}}
+.plant .leaves i:nth-child(2){animation:sprout 4s ease-in-out infinite}
+@keyframes sprout{0%,100%{transform:rotate(0)} 50%{transform:rotate(7deg)}}
+.btn{transition:transform .16s ease, background .16s ease}
+.btn:hover{transform:translateY(-2px)}
+.interest,.skill-group{transition:transform .18s ease, border-color .18s ease, box-shadow .18s ease}
+.interest:hover,.skill-group:hover{transform:translateY(-4px); border-color:var(--accent); box-shadow:0 10px 26px rgba(20,35,25,.09)}
+.frame{transition:transform .18s ease, box-shadow .18s ease}
+.frame:hover{transform:translateY(-4px) rotate(-1deg); box-shadow:0 10px 24px rgba(20,35,25,.12)}
+.gallery .frame:nth-child(even):hover{transform:translateY(-4px) rotate(1deg)}
+.stats div{transition:background .2s ease}
+.stats div:hover{background:var(--accent-soft)}
+.stats b{font-variant-numeric:tabular-nums}
+.nav nav a{position:relative}
+.nav nav a::after{content:""; position:absolute; left:0; bottom:-4px; width:0; height:2px; background:var(--accent); transition:width .18s ease}
+.nav nav a:hover::after{width:100%}
+.shot{transition:transform .18s ease, border-color .18s ease}
+.shot:hover{transform:translateY(-3px)}
+.rv{opacity:.25; transform:translateY(18px); transition:opacity .55s ease, transform .55s ease}
+.rv.in{opacity:1; transform:none}
+@media (prefers-reduced-motion: reduce){ .rv{opacity:1; transform:none} }
 /* ---------- Responsive ---------- */
 @media (max-width:720px){
   .hero{grid-template-columns:1fr; padding-block:44px 36px}
@@ -757,5 +798,48 @@ footer .prose{color:var(--muted)}
   </div>
 </footer>
 
+<script>
+(function(){
+  if (window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  if (!('IntersectionObserver' in window)) return;
+  // Reveal below-fold items as they scroll into view (visible-at-rest fallback: no .rv class, no JS = fully visible)
+  var items = document.querySelectorAll('.interest, .pub, .timeline li, .skill-group, .frame, .edu-item');
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if (e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+    });
+  }, {rootMargin:'0px 0px -6% 0px'});
+  items.forEach(function(el){
+    if (el.getBoundingClientRect().top > window.innerHeight){
+      el.classList.add('rv'); io.observe(el);
+    }
+  });
+  // Count up the stats once they come into view
+  var stats = document.querySelector('.stats');
+  if (stats){
+    var done = false;
+    var sio = new IntersectionObserver(function(entries){
+      if (!entries[0].isIntersecting || done) return;
+      done = true; sio.disconnect();
+      stats.querySelectorAll('b').forEach(function(b){
+        var txt = b.textContent.trim();
+        var dec = txt.indexOf('.') >= 0 ? 2 : 0;
+        var target = parseFloat(txt);
+        if (isNaN(target)) return;
+        var t0 = null;
+        function step(t){
+          if (t0 === null) t0 = t;
+          var p = Math.min((t - t0) / 900, 1);
+          p = 1 - Math.pow(1 - p, 3);
+          b.textContent = (target * p).toFixed(dec);
+          if (p < 1) requestAnimationFrame(step);
+        }
+        requestAnimationFrame(step);
+      });
+    }, {threshold:.4});
+    sio.observe(stats);
+  }
+})();
+</script>
 </body>
 </html>
