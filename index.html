@@ -191,12 +191,16 @@ h2{
 .edu-item ul{margin:8px 0 0; padding-left:18px; font-size:.92rem; color:var(--muted)}
 .edu-item ul li{margin-bottom:5px}
 /* ---------- Skills ---------- */
-.skills-grid{display:grid; grid-template-columns:repeat(3, 1fr); gap:18px}
+.skills-grid{display:grid; grid-template-columns:repeat(2, 1fr); gap:18px}
 .skill-group{border:1px solid var(--line); background:var(--surface); border-radius:8px; padding:20px 22px; min-width:0}
-.skill-group h3{font-size:.8rem; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:var(--accent); margin:0 0 12px}
+.skill-group h3{font-size:.8rem; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:var(--accent); margin:0 0 6px; font-family:var(--font-pixel)}
+.skill-group .where{font-size:.78rem; color:var(--muted); margin:0 0 12px; font-style:italic}
 .skill-group ul{list-style:none; margin:0; padding:0; font-size:.92rem}
-.skill-group li{padding:5px 0; border-bottom:1px dashed var(--line); color:var(--muted)}
+.skill-group li{padding:8px 0; border-bottom:1px dashed var(--line); color:var(--muted)}
 .skill-group li:last-child{border-bottom:none}
+.skill-group li b{display:block; color:var(--ink); font-weight:600; margin-bottom:2px}
+.skill-group li span{font-size:.84rem; line-height:1.5}
+.toolcloud{display:flex; flex-wrap:wrap; gap:8px; margin-top:4px}
 .lang-table{width:100%; border-collapse:collapse; font-size:.9rem; margin-top:8px}
 .lang-table th, .lang-table td{text-align:left; padding:8px 10px; border-bottom:1px solid var(--line)}
 .lang-table th{font-size:.74rem; letter-spacing:.08em; text-transform:uppercase; color:var(--muted); font-weight:700}
@@ -638,37 +642,57 @@ footer .prose{color:var(--muted)}
       </div>
       <div class="skills-grid">
         <div class="skill-group">
-          <h3>Computational</h3>
+          <h3>In silico &amp; bioinformatics</h3>
+          <p class="where">Applied across three peer-reviewed papers and the MS thesis</p>
           <ul>
-            <li>Differential gene expression analysis</li>
-            <li>PPI network &amp; hub-gene analysis</li>
-            <li>Network pharmacology</li>
-            <li>Molecular docking</li>
-            <li>Molecular dynamics simulation</li>
-            <li>Functional enrichment analysis</li>
-            <li>Research data curation &amp; management</li>
+            <li><b>Differential gene expression analysis</b><span>Public microarray datasets (NCBI GEO) analyzed with GEO2R / LIMMA to identify shared disease signatures</span></li>
+            <li><b>Network biology &amp; hub-gene analysis</b><span>PPI construction in STRING, visualization in Cytoscape, hub ranking by Degree, Closeness, EPC and Bottleneck topologies</span></li>
+            <li><b>Functional enrichment</b><span>GO term and KEGG pathway analysis to map biological processes behind disease mechanisms</span></li>
+            <li><b>Drug repurposing &amp; network pharmacology</b><span>Drug–gene interaction mining, candidate ranking, ADMET and drug-likeness screening</span></li>
+            <li><b>Molecular docking</b><span>Structure-based binding-affinity screening of candidate molecules against hub targets</span></li>
+            <li><b>Molecular dynamics simulation</b><span>100&nbsp;ns trajectories; stability assessed by RMSD, fluctuation and generalized Born surface area</span></li>
+            <li><b>Survival &amp; biomarker analysis</b><span>Prognostic evaluation of candidate genes in cancer cohorts</span></li>
           </ul>
         </div>
         <div class="skill-group">
-          <h3>Laboratory</h3>
+          <h3>Wet laboratory</h3>
+          <p class="where">Hands-on training at the Child Health Research Foundation, Dhaka</p>
           <ul>
-            <li>Primer design</li>
-            <li>Conventional PCR &amp; qPCR</li>
-            <li>DNA &amp; RNA extraction</li>
-            <li>Gel electrophoresis &amp; imaging</li>
-            <li>Clinical specimen handling</li>
-            <li>Laboratory biosafety protocols</li>
+            <li><b>PCR workflows, end to end</b><span>Primer design, conventional PCR and qPCR on biological specimens</span></li>
+            <li><b>Gel electrophoresis &amp; imaging</b><span>Post-amplification analysis and band interpretation</span></li>
+            <li><b>Nucleic acid extraction</b><span>Targeted DNA and RNA isolation from clinical samples</span></li>
+            <li><b>Biosafety practice</b><span>Standard laboratory safety and hazardous-waste disposal protocols</span></li>
+            <li><b>Clinical research context</b><span>Structured in-patient and out-patient exposure at a major pediatric hospital</span></li>
           </ul>
         </div>
         <div class="skill-group">
           <h3>Research &amp; communication</h3>
+          <p class="where">As Research Assistant and presenting author</p>
           <ul>
-            <li>Academic manuscript writing</li>
-            <li>Poster design &amp; presentation</li>
-            <li>Research proposal development</li>
-            <li>Mentoring &amp; knowledge transfer</li>
-            <li>Project &amp; timeline management</li>
+            <li><b>Academic writing</b><span>Lead author of two peer-reviewed papers; full manuscript lifecycle from data curation to revision</span></li>
+            <li><b>Scientific presentation</b><span>Four international conference posters, all as presenting author</span></li>
+            <li><b>Proposal development</b><span>Research design, aims framing and project timeline management</span></li>
+            <li><b>Collaboration</b><span>Coordinating writing and analysis across interdisciplinary research teams</span></li>
+            <li><b>Mentoring &amp; knowledge transfer</b><span>Training and instructing junior researchers; promoting transfer of knowledge</span></li>
+            <li><b>Research data management</b><span>Curation, documentation and versioning of datasets behind each study</span></li>
           </ul>
+        </div>
+        <div class="skill-group">
+          <h3>Toolbox</h3>
+          <p class="where">Named in the published methods</p>
+          <div class="toolcloud">
+            <span class="tag">NCBI GEO</span><span class="tag">GEO2R</span><span class="tag">LIMMA</span>
+            <span class="tag">STRING</span><span class="tag">Cytoscape</span><span class="tag">IMEx</span>
+            <span class="tag">GO</span><span class="tag">KEGG</span>
+            <span class="tag">molecular docking</span><span class="tag">MD simulation</span>
+            <span class="tag">ADMET screening</span><span class="tag">drug–gene interaction databases</span>
+            <span class="tag">survival analysis</span><span class="tag">TF &amp; miRNA network analysis</span>
+          </div>
+          <p class="where" style="margin-top:16px">And on paper</p>
+          <div class="toolcloud">
+            <span class="tag">watercolor</span><span class="tag">acrylic</span><span class="tag">graphite &amp; ink</span>
+            <span class="tag">scientific poster design</span><span class="tag">photography</span>
+          </div>
         </div>
       </div>
 
