@@ -15,7 +15,6 @@ Personal academic website for MS/PhD and Erasmus Mundus funding applications. A 
 
 ## Before going live — personalize
 
-- **Email**: add an academic/professional email to the Contact section in `index.html` (search for `contact-links`). Committees expect a direct email.
 - **Google Scholar**: create a profile and add a button next to ResearchGate.
 - **Photo**: an optional professional headshot can go in the hero (`assets/photo.jpg`).
 - **Conference photos**: drop images at `assets/photos/iybc-2026.jpg`, `icles-2025.jpg`, `icls-2025.jpg`, `ruec-2025.jpg`, then replace each placeholder `<div class="ph">…</div>` in `index.html` with `<img src="assets/photos/….jpg" alt="Nazia presenting her poster at …">`.

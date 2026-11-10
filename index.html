@@ -276,6 +276,11 @@ footer{margin-top:72px; border-top:1px solid var(--line); background:var(--surfa
 footer .inner{padding-block:48px 40px}
 footer h2{font-size:1.5rem; margin-bottom:10px}
 footer .prose{color:var(--muted)}
+.email-row{display:flex; align-items:center; gap:12px; flex-wrap:wrap; margin-top:24px}
+.email-row a{font-family:var(--font-mono); font-size:1.02rem; color:var(--ink); border-bottom:2px solid var(--accent); padding-bottom:1px}
+.email-row a:hover{color:var(--accent); text-decoration:none}
+.copybtn{font-family:var(--font-pixel); font-size:.6rem; padding:7px 12px; border:1px solid var(--line); background:var(--surface); color:var(--muted); border-radius:5px; cursor:pointer; transition:border-color .15s, color .15s}
+.copybtn:hover{border-color:var(--accent); color:var(--accent)}
 .contact-links{display:flex; flex-wrap:wrap; gap:12px; margin-top:24px}
 .fineprint{margin-top:40px; padding-top:18px; border-top:1px solid var(--line); font-size:.78rem; color:var(--muted); display:flex; flex-wrap:wrap; gap:8px; justify-content:space-between}
 /* ---------- Liveliness ---------- */
@@ -831,6 +836,10 @@ footer .prose{color:var(--muted)}
         biotechnology — including Erasmus Mundus Joint Masters — and am glad to discuss research fit,
         collaborations, or my published work.
       </p>
+    </div>
+    <div class="email-row">
+      <a href="mailto:naziazarin101@gmail.com">naziazarin101@gmail.com</a>
+      <button class="copybtn" type="button" id="copy-email" onclick="var b=this; try{navigator.clipboard.writeText('naziazarin101@gmail.com').then(function(){b.textContent='Copied!'; setTimeout(function(){b.textContent='Copy'},1600)}).catch(function(){})}catch(e){}">Copy</button>
     </div>
     <div class="contact-links">
       <a class="btn primary" href="https://www.linkedin.com/in/nazia-zarin-18886b2b0" target="_blank" rel="noopener">LinkedIn</a>
