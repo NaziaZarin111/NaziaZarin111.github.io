@@ -16,7 +16,7 @@ Personal academic website for MS/PhD and Erasmus Mundus funding applications. A 
 ## Before going live — personalize
 
 - **Email**: add an academic/professional email to the Contact section in `index.html` (search for `contact-links`). Committees expect a direct email.
-- **Google Scholar / ORCID**: create profiles and add buttons next to ResearchGate (ORCID is required by most European applications).
+- **Google Scholar**: create a profile and add a button next to ResearchGate.
 - **Photo**: an optional professional headshot can go in the hero (`assets/photo.jpg`).
 - **CV**: replace `assets/Nazia-Zarin-CV.pdf` whenever the CV is updated.
 
