@@ -215,9 +215,15 @@ h2{
 .pullquote cite{display:block; margin-top:10px; font-style:normal; font-family:var(--font-pixel); font-size:.62rem; color:var(--accent); text-transform:uppercase}
 /* ---------- Beyond the lab ---------- */
 .beyond-sub{font-family:var(--font-pixel); font-size:.72rem; color:var(--accent); text-transform:uppercase; letter-spacing:.05em; margin:0 0 10px}
-.shelf{display:flex; align-items:flex-end; gap:5px; height:112px; margin-top:22px; padding:0 12px; border-bottom:7px solid var(--line); max-width:420px}
-.shelf i{display:block; border-radius:3px 3px 0 0; background:var(--accent); flex:0 0 auto}
-.shelf i.b2{background:var(--muted)} .shelf i.b3{background:var(--line)}
+.shelf{display:flex; align-items:flex-end; gap:5px; margin-top:22px; padding:0 12px; border-bottom:7px solid var(--line); max-width:460px; overflow-x:auto}
+.shelf .spine{
+  writing-mode:vertical-rl; flex:0 0 auto;
+  font-size:.62rem; font-weight:600; letter-spacing:.02em; line-height:1;
+  color:var(--bg); background:var(--accent);
+  padding:12px 6px 14px; min-height:74px; border-radius:3px 3px 0 0;
+}
+.shelf .spine.b2{background:var(--muted)}
+.shelf .spine.b3{background:var(--accent-soft); color:var(--ink); border:1px solid var(--line); border-bottom:none}
 /* ---------- Contact / footer ---------- */
 footer{margin-top:72px; border-top:1px solid var(--line); background:var(--surface)}
 footer .inner{padding-block:48px 40px}
@@ -630,14 +636,23 @@ footer .prose{color:var(--muted)}
           <p class="beyond-sub">The bookshelf</p>
           <div class="prose">
             <p>
-              I read constantly — fiction, science writing, and whatever else follows me home. Choosing which
-              favourites to admit to publicly has proven harder than any enrichment analysis; a properly
-              annotated shelf is forthcoming.
+              I read constantly — fiction first, science writing close behind, and whatever else follows me
+              home. The current favourites, spines out:
             </p>
           </div>
-          <div class="shelf" aria-hidden="true">
-            <i style="width:22px;height:78px"></i><i class="b2" style="width:16px;height:92px"></i><i style="width:28px;height:64px"></i><i class="b3" style="width:14px;height:84px"></i><i style="width:19px;height:96px"></i><i class="b2" style="width:24px;height:58px"></i><i class="b3" style="width:17px;height:88px"></i><i style="width:15px;height:70px"></i><i class="b2" style="width:26px;height:82px"></i><i class="b3" style="width:18px;height:60px"></i><i style="width:21px;height:90px"></i>
+          <div class="shelf">
+            <span class="spine" title="Fyodor Dostoevsky">The Brothers Karamazov</span>
+            <span class="spine b3" title="Jane Austen">Emma</span>
+            <span class="spine b2" title="Won-pyung Sohn">Almond</span>
+            <span class="spine" title="Oscar Wilde">The Picture of Dorian Gray</span>
+            <span class="spine b2" title="Daniel Keyes">Flowers for Algernon</span>
+            <span class="spine b3" title="George Orwell">1984</span>
+            <span class="spine" title="Andy Weir">Project Hail Mary</span>
+            <span class="spine b2" title="Madeline Miller">The Song of Achilles</span>
           </div>
+          <p class="gallery-note">
+            Dostoevsky · Austen · Won-pyung Sohn · Wilde · Keyes · Orwell · Weir · Miller
+          </p>
 
           <p class="beyond-sub" style="margin-top:36px">The companions</p>
           <div class="prose">
