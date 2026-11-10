@@ -191,15 +191,21 @@ h2{
 .gallery.g3{grid-template-columns:repeat(3, 1fr)}
 .frame{border:1px solid var(--line); background:var(--surface); border-radius:6px; padding:9px 9px 11px; margin:0; min-width:0}
 .frame .ph{
-  aspect-ratio:4/3; max-width:100%; border:1.5px dashed var(--line); border-radius:4px;
+  aspect-ratio:1/1; max-width:100%; border:1.5px dashed var(--line); border-radius:4px;
   display:flex; align-items:center; justify-content:center;
   background:var(--accent-soft); color:var(--muted);
 }
 .frame .ph span{font-family:var(--font-pixel); font-size:.6rem; text-align:center; padding:0 10px; line-height:1.8}
-.frame img{display:block; width:100%; aspect-ratio:4/3; object-fit:cover; border-radius:4px}
+.frame img{display:block; width:100%; aspect-ratio:1/1; object-fit:cover; border-radius:4px}
 .frame figcaption{font-size:.76rem; color:var(--muted); margin-top:8px; line-height:1.45}
 .frame figcaption b{color:var(--ink); font-weight:600}
 .gallery-note{font-size:.84rem; color:var(--muted); margin-top:14px}
+.pullquote{
+  border-left:3px solid var(--accent); padding:4px 0 4px 20px; margin:30px 0 0;
+  font-family:var(--font-display); font-style:italic; font-size:1.02rem;
+  color:var(--muted); max-width:60ch;
+}
+.pullquote cite{display:block; margin-top:10px; font-style:normal; font-family:var(--font-pixel); font-size:.62rem; color:var(--accent); text-transform:uppercase}
 /* ---------- Beyond the lab ---------- */
 .beyond-sub{font-family:var(--font-pixel); font-size:.72rem; color:var(--accent); text-transform:uppercase; letter-spacing:.05em; margin:0 0 10px}
 .shelf{display:flex; align-items:flex-end; gap:5px; height:112px; margin-top:22px; padding:0 12px; border-bottom:7px solid var(--line); max-width:420px}
@@ -415,8 +421,15 @@ footer .prose{color:var(--muted)}
         </li>
       </ul>
 
+      <blockquote class="pullquote">
+        My work highlights shared molecular mechanisms and potential therapeutic agents at the intersection of
+        metabolic and neurodegenerative disorders. The conference was a valuable platform for discussion,
+        constructive feedback, and engaging with leading experts in the field — I'm grateful for the opportunity.
+        <cite>— on presenting at RUEC 2025, Rajshahi University</cite>
+      </blockquote>
+
       <h2 style="border:none; font-size:1.2rem; margin:44px 0 0">From the poster sessions</h2>
-      <div class="gallery">
+      <div class="gallery g3">
         <figure class="frame">
           <div class="ph"><span>photo slot<br>assets/photos/iybc-2026.jpg</span></div>
           <figcaption><b>IYBC 2026</b> — presenting the colorectal cancer poster, Dhaka</figcaption>
@@ -426,12 +439,20 @@ footer .prose{color:var(--muted)}
           <figcaption><b>ICLES 2025</b> — TNBC &amp; type 2 diabetes poster, Jagannath University</figcaption>
         </figure>
         <figure class="frame">
-          <div class="ph"><span>photo slot<br>assets/photos/icls-2025.jpg</span></div>
-          <figcaption><b>ICLS 2025</b> — NSCLC &amp; tuberculosis poster, SUST Sylhet</figcaption>
+          <img src="assets/photos/icls-2025.jpg" style="object-position:center 22%" alt="Nazia Zarin beside her poster on molecular signatures of non-small cell lung cancer and tuberculosis at ICLS 2025">
+          <figcaption><b>ICLS 2025</b> — presenting the NSCLC &amp; tuberculosis poster, SUST Sylhet</figcaption>
         </figure>
         <figure class="frame">
-          <div class="ph"><span>photo slot<br>assets/photos/ruec-2025.jpg</span></div>
-          <figcaption><b>RUEC 2025</b> — T2D &amp; Parkinson's poster, Rajshahi University</figcaption>
+          <img src="assets/photos/icls-2025-banner.jpg" alt="Nazia Zarin in front of the ICLS 2025 conference backdrop at Shahjalal University of Science and Technology">
+          <figcaption><b>ICLS 2025</b> — School of Life Sciences, SUST</figcaption>
+        </figure>
+        <figure class="frame">
+          <img src="assets/photos/icls-2025-abstracts.jpg" alt="ICLS 2025 abstract book, conference bag, and certificate of participation">
+          <figcaption><b>ICLS 2025</b> — abstract book &amp; certificate of participation</figcaption>
+        </figure>
+        <figure class="frame">
+          <img src="assets/photos/ruec-2025.jpg" style="object-position:center 35%" alt="Nazia Zarin presenting her poster on type 2 diabetes and Parkinson's disease at RUEC 2025, Rajshahi University">
+          <figcaption><b>RUEC 2025</b> — presenting the T2D &amp; Parkinson's poster, Rajshahi University</figcaption>
         </figure>
       </div>
     </section>
