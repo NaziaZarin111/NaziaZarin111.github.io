@@ -137,7 +137,10 @@ h2{
 .interest .tags{margin-top:12px; display:flex; flex-wrap:wrap; gap:6px}
 .tag{font-family:var(--font-mono); font-size:.72rem; color:var(--accent); background:var(--accent-soft); padding:3px 8px; border-radius:4px}
 /* ---------- Publications ---------- */
-.pub{display:grid; grid-template-columns:64px 1fr; gap:18px; padding-block:22px; border-bottom:1px solid var(--line); min-width:0}
+.pub{display:grid; grid-template-columns:64px 1fr 112px; gap:18px; padding-block:22px; border-bottom:1px solid var(--line); min-width:0}
+.pub .shot{display:block; width:112px; max-width:100%; border:1px solid var(--line); border-radius:4px; overflow:hidden; align-self:start; background:var(--surface)}
+.pub .shot img{display:block; width:100%; aspect-ratio:3/4; object-fit:cover; object-position:top}
+.pub .shot:hover{border-color:var(--accent)}
 .pub:last-child{border-bottom:none}
 .pub .year{font-family:var(--font-mono); font-size:.9rem; color:var(--muted); padding-top:3px}
 .pub h3{font-family:var(--font-display); font-size:1.12rem; font-weight:600; margin:0 0 6px; line-height:1.35}
@@ -233,6 +236,7 @@ footer .prose{color:var(--muted)}
   .gallery, .gallery.g3{grid-template-columns:repeat(2, 1fr)}
   .pub{grid-template-columns:1fr; gap:4px}
   .pub .year{padding-top:0}
+  .pub .shot{margin-top:10px}
 }
 </style>
 </head>
@@ -380,6 +384,9 @@ footer .prose{color:var(--muted)}
             <span class="doi"><a href="https://doi.org/10.1007/s40203-026-00767-5" target="_blank" rel="noopener">doi:10.1007/s40203-026-00767-5</a></span>
           </div>
         </div>
+        <a class="shot" href="https://doi.org/10.1007/s40203-026-00767-5" target="_blank" rel="noopener">
+          <img src="assets/papers/nsclc-tb.jpg" alt="Springer journal page of the published NSCLC and tuberculosis article in In Silico Pharmacology">
+        </a>
       </article>
 
       <article class="pub">
@@ -387,12 +394,15 @@ footer .prose{color:var(--muted)}
         <div>
           <h3><a href="https://doi.org/10.1177/11779322261488174" target="_blank" rel="noopener">In silico identification of key genes and repurposable drugs for triple-negative breast cancer</a></h3>
           <p class="authors"><b>Nazia Zarin</b>, Tasnim Hosen Tanha, Mimuna Nishad, et&nbsp;al.</p>
-          <p class="venue">Bioinformatics and Biology Insights · <span class="publisher">SAGE Publishing</span></p>
+          <p class="venue">Bioinformatics and Biology Insights, vol. 20, pp. 1–21 · <span class="publisher">SAGE Publishing</span></p>
           <div class="meta-row">
             <span class="badge">First author</span>
             <span class="doi"><a href="https://doi.org/10.1177/11779322261488174" target="_blank" rel="noopener">doi:10.1177/11779322261488174</a></span>
           </div>
         </div>
+        <a class="shot" href="https://doi.org/10.1177/11779322261488174" target="_blank" rel="noopener">
+          <img src="assets/papers/tnbc.jpg" alt="First page of the published triple-negative breast cancer article in Bioinformatics and Biology Insights">
+        </a>
       </article>
 
       <article class="pub">
@@ -405,6 +415,9 @@ footer .prose{color:var(--muted)}
             <span class="doi"><a href="https://doi.org/10.1080/07391102.2025.2593504" target="_blank" rel="noopener">doi:10.1080/07391102.2025.2593504</a></span>
           </div>
         </div>
+        <a class="shot" href="https://doi.org/10.1080/07391102.2025.2593504" target="_blank" rel="noopener">
+          <img src="assets/papers/hfe.jpg" alt="Taylor and Francis journal page of the published HFE gene article in the Journal of Biomolecular Structure and Dynamics">
+        </a>
       </article>
 
       <p style="font-size:.86rem; color:var(--muted); margin-top:18px">
