@@ -28,17 +28,26 @@
   --font-body:"Fira Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
   --font-mono:"Fira Code", ui-monospace, "Cascadia Mono", Consolas, monospace;
   --font-pixel:"Silkscreen", "Fira Code", monospace;
+  --wood:#a87a4e;
+  --book1:#2e7d4f; --book2:#8a5a2b; --book3:#4a5d82;
+  --book4:#96403c; --book5:#556052; --book6:#6b4a73;
 }
 @media (prefers-color-scheme: dark){
   :root:not([data-theme="light"]){
     --bg:#0f1411; --surface:#161d17; --ink:#e7ece8; --muted:#97a89b;
     --accent:#6fc590; --accent-soft:#1a2b1f; --line:#263328;
+    --wood:#5d4330;
+    --book1:#6fc590; --book2:#c99a62; --book3:#93a9d6;
+    --book4:#d98b85; --book5:#a4b1a0; --book6:#b795bf;
     color-scheme: dark;
   }
 }
 :root[data-theme="dark"]{
   --bg:#0f1411; --surface:#161d17; --ink:#e7ece8; --muted:#97a89b;
   --accent:#6fc590; --accent-soft:#1a2b1f; --line:#263328;
+  --wood:#5d4330;
+  --book1:#6fc590; --book2:#c99a62; --book3:#93a9d6;
+  --book4:#d98b85; --book5:#a4b1a0; --book6:#b795bf;
   color-scheme: dark;
 }
 *{box-sizing:border-box}
@@ -215,15 +224,46 @@ h2{
 .pullquote cite{display:block; margin-top:10px; font-style:normal; font-family:var(--font-pixel); font-size:.62rem; color:var(--accent); text-transform:uppercase}
 /* ---------- Beyond the lab ---------- */
 .beyond-sub{font-family:var(--font-pixel); font-size:.72rem; color:var(--accent); text-transform:uppercase; letter-spacing:.05em; margin:0 0 10px}
-.shelf{display:flex; align-items:flex-end; gap:5px; margin-top:22px; padding:0 12px; border-bottom:7px solid var(--line); max-width:460px; overflow-x:auto}
-.shelf .spine{
-  writing-mode:vertical-rl; flex:0 0 auto;
-  font-size:.62rem; font-weight:600; letter-spacing:.02em; line-height:1;
-  color:var(--bg); background:var(--accent);
-  padding:12px 6px 14px; min-height:74px; border-radius:3px 3px 0 0;
+.bookcase{
+  margin-top:22px; max-width:100%;
+  border:9px solid var(--wood); border-radius:7px;
+  background:var(--surface);
+  box-shadow:inset 0 2px 10px rgba(0,0,0,.08);
 }
-.shelf .spine.b2{background:var(--muted)}
-.shelf .spine.b3{background:var(--accent-soft); color:var(--ink); border:1px solid var(--line); border-bottom:none}
+.brow{display:flex; align-items:flex-end; gap:4px; padding:16px 10px 0; border-bottom:9px solid var(--wood); overflow-x:auto}
+.brow:last-child{border-bottom:none}
+.spine{
+  position:relative; writing-mode:vertical-rl; flex:0 0 auto;
+  font-size:.6rem; font-weight:600; letter-spacing:.02em; line-height:1;
+  color:var(--bg); background:var(--book1);
+  padding:13px 6px 15px; min-height:78px; border-radius:3px 3px 0 0;
+  transition:transform .15s ease;
+}
+.spine:hover{transform:translateY(-6px)}
+.spine.c2{background:var(--book2)} .spine.c3{background:var(--book3)}
+.spine.c4{background:var(--book4)} .spine.c5{background:var(--book5)}
+.spine.c6{background:var(--book6)}
+.spine.band::before, .spine.band::after{
+  content:""; position:absolute; left:0; right:0; height:2px;
+  background:var(--bg); opacity:.5;
+}
+.spine.band::before{top:7px} .spine.band::after{bottom:9px}
+.spine.lean{transform:rotate(7deg); transform-origin:bottom right; margin-right:7px; margin-left:3px}
+.spine.lean:hover{transform:rotate(7deg) translateY(-4px)}
+.flatstack{display:flex; flex-direction:column; gap:2px; align-self:flex-end; flex:0 0 auto}
+.flatbook{
+  display:block; height:17px; min-width:74px; border-radius:2px;
+  font-size:.56rem; font-weight:600; line-height:17px; text-align:center;
+  color:var(--bg); background:var(--book4); padding:0 8px;
+}
+.flatbook.c1{background:var(--book1)} .flatbook.c2{background:var(--book2)}
+.plant{display:flex; flex-direction:column; align-items:center; margin-left:auto; padding-right:4px; flex:0 0 auto}
+.plant .leaves{display:flex; align-items:flex-end; gap:1px}
+.plant .leaves i{width:9px; height:15px; background:var(--accent); border-radius:0 62% 0 62%}
+.plant .leaves i:first-child{transform:rotate(-38deg)}
+.plant .leaves i:nth-child(2){height:20px}
+.plant .leaves i:last-child{transform:rotate(38deg)}
+.plant .pot{width:20px; height:13px; background:var(--wood); border-radius:2px 2px 5px 5px; margin-top:-2px}
 /* ---------- Contact / footer ---------- */
 footer{margin-top:72px; border-top:1px solid var(--line); background:var(--surface)}
 footer .inner{padding-block:48px 40px}
@@ -637,21 +677,35 @@ footer .prose{color:var(--muted)}
           <div class="prose">
             <p>
               I read constantly — fiction first, science writing close behind, and whatever else follows me
-              home. The current favourites, spines out:
+              home. The all-time favourites on the top shelf; the current residents below.
             </p>
           </div>
-          <div class="shelf">
-            <span class="spine" title="Fyodor Dostoevsky">The Brothers Karamazov</span>
-            <span class="spine b3" title="Jane Austen">Emma</span>
-            <span class="spine b2" title="Won-pyung Sohn">Almond</span>
-            <span class="spine" title="Oscar Wilde">The Picture of Dorian Gray</span>
-            <span class="spine b2" title="Daniel Keyes">Flowers for Algernon</span>
-            <span class="spine b3" title="George Orwell">1984</span>
-            <span class="spine" title="Andy Weir">Project Hail Mary</span>
-            <span class="spine b2" title="Madeline Miller">The Song of Achilles</span>
+          <div class="bookcase">
+            <div class="brow">
+              <span class="spine c3 band" title="Fyodor Dostoevsky" aria-label="The Brothers Karamazov by Fyodor Dostoevsky">The Brothers Karamazov</span>
+              <span class="spine c6" title="Oscar Wilde" aria-label="The Picture of Dorian Gray by Oscar Wilde">The Picture of Dorian Gray</span>
+              <span class="spine c4" title="Jane Austen" aria-label="Emma by Jane Austen">Emma</span>
+              <span class="spine c2 band" title="Bram Stoker" aria-label="Dracula by Bram Stoker">Dracula</span>
+              <span class="spine c5 lean" title="Daniel Keyes" aria-label="Flowers for Algernon by Daniel Keyes">Flowers for Algernon</span>
+              <div class="flatstack">
+                <span class="flatbook" title="George Orwell" aria-label="1984 by George Orwell">1984</span>
+                <span class="flatbook c2" title="Won-pyung Sohn" aria-label="Almond by Won-pyung Sohn">Almond</span>
+              </div>
+            </div>
+            <div class="brow">
+              <span class="spine c2" title="Madeline Miller" aria-label="The Song of Achilles by Madeline Miller">The Song of Achilles</span>
+              <span class="spine band" title="Andy Weir" aria-label="Project Hail Mary by Andy Weir">Project Hail Mary</span>
+              <span class="spine c3" title="Natasha Pulley" aria-label="The Kingdoms by Natasha Pulley">The Kingdoms</span>
+              <span class="spine c4" title="Natasha Pulley" aria-label="The Bedlam Stacks by Natasha Pulley">The Bedlam Stacks</span>
+              <span class="spine c6 band" title="Natasha Pulley" aria-label="The Lost Future of Pepperharrow by Natasha Pulley">The Lost Future of Pepperharrow</span>
+              <span class="spine c5" title="Maggie Stiefvater" aria-label="The Raven King by Maggie Stiefvater">The Raven King</span>
+              <span class="spine c3" title="Maggie Stiefvater" aria-label="Greywaren by Maggie Stiefvater">Greywaren</span>
+              <span class="spine c4 band" title="Rou Bao Bu Chi Rou" aria-label="The Husky and His White Cat Shizun by Rou Bao Bu Chi Rou">The Husky &amp; His White Cat Shizun</span>
+              <span class="plant" aria-hidden="true"><span class="leaves"><i></i><i></i><i></i></span><span class="pot"></span></span>
+            </div>
           </div>
           <p class="gallery-note">
-            Dostoevsky · Austen · Won-pyung Sohn · Wilde · Keyes · Orwell · Weir · Miller
+            Hover a spine for the author. Lower shelf spotted in the wild — see the inspector below.
           </p>
 
           <p class="beyond-sub" style="margin-top:36px">The companions</p>
