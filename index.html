@@ -223,6 +223,9 @@ h2{
 .gallery.books img{aspect-ratio:3/4}
 .gallery.art{grid-template-columns:1fr}
 .gallery.art img{aspect-ratio:auto}
+.gallery.posters img{aspect-ratio:3/4; object-position:top; background:#fff}
+.gallery.lab .wide{grid-column:span 2}
+.gallery.lab .wide img{aspect-ratio:2/1}
 .pullquote{
   border-left:3px solid var(--accent); padding:4px 0 4px 20px; margin:30px 0 0;
   font-family:var(--font-display); font-style:italic; font-size:1.02rem;
@@ -348,6 +351,7 @@ footer .prose{color:var(--muted)}
       <a href="#research">Research</a>
       <a href="#publications">Publications</a>
       <a href="#conferences">Conferences</a>
+      <a href="#lab">Lab</a>
       <a href="#background">Background</a>
       <a href="#skills">Skills</a>
       <a href="#beyond">Beyond the lab</a>
@@ -554,6 +558,34 @@ footer .prose{color:var(--muted)}
         </li>
       </ul>
 
+      <h2 style="border:none; font-size:1.2rem; margin:44px 0 0">The posters</h2>
+      <div class="gallery posters">
+        <figure class="frame">
+          <a href="assets/posters/iybc-2026-crc.pdf" target="_blank" rel="noopener">
+            <img src="assets/posters/thumbs/iybc-2026.jpg" onerror="this.closest('figure').style.display='none'" alt="Poster: Exploring Molecular Biomarkers and Therapeutic Agents of Colorectal Cancer, presented at IYBC 2026">
+          </a>
+          <figcaption><b>IYBC 2026</b> — colorectal cancer biomarkers &amp; drug repurposing · <a href="assets/posters/iybc-2026-crc.pdf" target="_blank" rel="noopener">open PDF</a></figcaption>
+        </figure>
+        <figure class="frame">
+          <a href="assets/posters/icles-2025-tnbc-t2d.pdf" target="_blank" rel="noopener">
+            <img src="assets/posters/thumbs/icles-2025.jpg" onerror="this.closest('figure').style.display='none'" alt="Poster: Exploring Molecular Signatures and Therapeutic Agents of Triple-Negative Breast Cancer and Type 2 Diabetes, presented at ICLES 2025">
+          </a>
+          <figcaption><b>ICLES 2025</b> — TNBC &amp; type 2 diabetes · <a href="assets/posters/icles-2025-tnbc-t2d.pdf" target="_blank" rel="noopener">open PDF</a></figcaption>
+        </figure>
+        <figure class="frame">
+          <a href="assets/posters/icls-2025-nsclc-tb.pdf" target="_blank" rel="noopener">
+            <img src="assets/posters/thumbs/icls-2025.jpg" onerror="this.closest('figure').style.display='none'" alt="Poster: Exploring Molecular Signatures and Therapeutic Agents of Non-Small Cell Lung Cancer and Tuberculosis, presented at ICLS 2025">
+          </a>
+          <figcaption><b>ICLS 2025</b> — NSCLC &amp; tuberculosis · <a href="assets/posters/icls-2025-nsclc-tb.pdf" target="_blank" rel="noopener">open PDF</a></figcaption>
+        </figure>
+        <figure class="frame">
+          <a href="assets/posters/ruec-2025-t2d-pd.pdf" target="_blank" rel="noopener">
+            <img src="assets/posters/thumbs/ruec-2025.jpg" onerror="this.closest('figure').style.display='none'" alt="Poster: Exploring Molecular Signatures and Therapeutic Agents of Type 2 Diabetes and Parkinson's Disease, presented at RUEC 2025">
+          </a>
+          <figcaption><b>RUEC 2025</b> — type 2 diabetes &amp; Parkinson's · <a href="assets/posters/ruec-2025-t2d-pd.pdf" target="_blank" rel="noopener">open PDF</a></figcaption>
+        </figure>
+      </div>
+
       <blockquote class="pullquote">
         My work highlights shared molecular mechanisms and potential therapeutic agents at the intersection of
         metabolic and neurodegenerative disorders. The conference was a valuable platform for discussion,
@@ -578,6 +610,69 @@ footer .prose{color:var(--muted)}
         <figure class="frame">
           <img src="assets/photos/ruec-2025.jpg" style="object-position:center 35%" onerror="this.closest('figure').style.display='none'" alt="Nazia Zarin presenting her poster on type 2 diabetes and Parkinson's disease at RUEC 2025, Rajshahi University">
           <figcaption><b>RUEC 2025</b> — presenting the T2D &amp; Parkinson's poster, Rajshahi University</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- ============ IN THE LAB ============ -->
+    <section id="lab">
+      <div class="sec-head">
+        <h2>In the lab</h2>
+        <span class="count">wet-lab exposure</span>
+      </div>
+      <p style="max-width:68ch">
+        My research lives in silico, but I know the bench the data comes from. Through molecular biology
+        training at the <b>Child Health Research Foundation</b> (Dhaka) and hands-on sessions at
+        <b>GenX Precision Molecular Diagnostics</b>, I've worked the wet-lab side of the pipeline my analyses
+        start from — extracting DNA from clinical blood samples, setting up PCR, running gels, and reading
+        immunoassays.
+      </p>
+      <div class="toolcloud" style="margin-top:14px">
+        <span class="tag">DNA/RNA extraction</span><span class="tag">PCR &amp; qPCR setup</span>
+        <span class="tag">gel electrophoresis</span><span class="tag">ELISA &amp; microplate assays</span>
+        <span class="tag">centrifugation &amp; sample prep</span><span class="tag">biosafety cabinet technique</span>
+        <span class="tag">micropipetting</span>
+      </div>
+      <div class="gallery lab">
+        <figure class="frame">
+          <img src="assets/lab/02.jpg" onerror="this.closest('figure').style.display='none'" alt="Nazia Zarin pipetting samples inside a biosafety cabinet with tube racks and reagents">
+          <figcaption><b>Sample prep</b> — working inside the biosafety cabinet</figcaption>
+        </figure>
+        <figure class="frame">
+          <img src="assets/lab/04.jpg" onerror="this.closest('figure').style.display='none'" alt="Loading PCR products into an agarose gel electrophoresis tank beside an analytical balance">
+          <figcaption><b>Electrophoresis</b> — loading PCR products into an agarose gel</figcaption>
+        </figure>
+        <figure class="frame">
+          <img src="assets/lab/01.jpg" style="object-position:center 30%" onerror="this.closest('figure').style.display='none'" alt="Nazia Zarin loading a 96-well ELISA plate with a micropipette at GenX Precision Molecular Diagnostics">
+          <figcaption><b>Immunoassay</b> — loading a 96-well ELISA plate</figcaption>
+        </figure>
+        <figure class="frame">
+          <img src="assets/lab/05.jpg" onerror="this.closest('figure').style.display='none'" alt="Benchtop centrifuge, dry bath, and a rack of EDTA blood collection tubes queued for DNA extraction">
+          <figcaption><b>Extraction</b> — blood samples queued for DNA isolation</figcaption>
+        </figure>
+        <figure class="frame">
+          <img src="assets/lab/03.jpg" style="object-position:center 60%" onerror="this.closest('figure').style.display='none'" alt="Transferring patient samples from collection tubes into a microplate with a micropipette">
+          <figcaption><b>Plating</b> — transferring samples for assay</figcaption>
+        </figure>
+        <figure class="frame">
+          <img src="assets/lab/07.jpg" onerror="this.closest('figure').style.display='none'" alt="Numbered extraction aliquots on a rack beside a centrifuge and heat block">
+          <figcaption><b>Workflow</b> — numbered aliquots through spin &amp; incubation</figcaption>
+        </figure>
+        <figure class="frame">
+          <img src="assets/lab/06.jpg" onerror="this.closest('figure').style.display='none'" alt="Microcentrifuge set to 4000 rpm spinning down extraction tubes">
+          <figcaption><b>Spin-down</b> — microcentrifuge at 4,000 rpm</figcaption>
+        </figure>
+        <figure class="frame">
+          <img src="assets/lab/08.jpg" style="object-position:center 25%" onerror="this.closest('figure').style.display='none'" alt="Nazia Zarin pipetting at the bench at GenX Precision Molecular Diagnostics">
+          <figcaption><b>At the bench</b> — GenX Precision Molecular Diagnostics</figcaption>
+        </figure>
+        <figure class="frame wide">
+          <img src="assets/lab/09.jpg" onerror="this.closest('figure').style.display='none'" alt="Microplate readers and immunoassay analyzers on the diagnostics bench">
+          <figcaption><b>Readout</b> — ELISA &amp; immunoassay readers</figcaption>
+        </figure>
+        <figure class="frame wide">
+          <img src="assets/lab/10.jpg" onerror="this.closest('figure').style.display='none'" alt="PCR tube racks and micropipettes laid out inside a laminar-flow hood">
+          <figcaption><b>PCR prep</b> — racks and pipettes in the laminar-flow hood</figcaption>
         </figure>
       </div>
     </section>
