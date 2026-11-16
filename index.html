@@ -231,6 +231,12 @@ h2{
 .gallery.certs img{aspect-ratio:4/3; background:#fff}
 /* ---------- Abstracts ---------- */
 .pub-desc{font-size:.88rem; color:var(--muted); line-height:1.6; margin:10px 0 0; max-width:70ch}
+/* ---------- About ---------- */
+.about-grid{display:grid; grid-template-columns:1.55fr 1fr; gap:38px; align-items:start}
+.about-grid .prose p{color:var(--muted); line-height:1.75; margin:0 0 14px}
+.about-grid .prose p:last-child{margin-bottom:0}
+.about-photo{max-width:330px; justify-self:end; width:100%}
+.about-photo img{aspect-ratio:4/5}
 .abstract{margin-top:10px}
 .abstract summary{cursor:pointer; font-family:var(--font-pixel); font-size:.6rem; letter-spacing:.08em; text-transform:uppercase; color:var(--accent); list-style:none; display:inline-flex; align-items:center; gap:6px}
 .abstract summary::-webkit-details-marker{display:none}
@@ -359,6 +365,8 @@ footer .prose{color:var(--muted)}
   .cols{grid-template-columns:1fr; gap:8px}
   .skills-grid{grid-template-columns:1fr}
   .gallery, .gallery.g3{grid-template-columns:repeat(2, 1fr)}
+  .about-grid{grid-template-columns:1fr; gap:24px}
+  .about-photo{justify-self:start; max-width:300px}
   .pub{grid-template-columns:1fr; gap:4px}
   .pub .year{padding-top:0}
   .pub .shot{margin-top:10px}
@@ -371,6 +379,7 @@ footer .prose{color:var(--muted)}
   <div class="wrap nav">
     <a class="brand" href="#top">Nazia Zarin</a>
     <nav aria-label="Sections">
+      <a href="#about">About</a>
       <a href="#research">Research</a>
       <a href="#publications">Publications</a>
       <a href="#conferences">Conferences</a>
@@ -454,6 +463,39 @@ footer .prose{color:var(--muted)}
       <div role="listitem"><b>4</b><span>International poster presentations</span></div>
       <div role="listitem"><b>3.62</b><span>BSc CGPA / 4.00 · First Class</span></div>
     </div>
+
+    <!-- ============ ABOUT ============ -->
+    <section id="about">
+      <div class="sec-head">
+        <h2>About me</h2>
+      </div>
+      <div class="about-grid">
+        <div class="prose">
+          <p>
+            I am Nazia — a Biochemistry &amp; Biotechnology graduate with a strong pull toward research,
+            particularly computational biology. My work focuses on exploring molecular mechanisms, identifying
+            potential biomarkers, and investigating repurposable drugs in cancer, with published research
+            spanning colorectal cancer, triple-negative breast cancer, and non-small cell lung cancer.
+          </p>
+          <p>
+            I have also worked on several ongoing projects involving multi-epitope vaccine design, siRNA
+            therapeutics, and computational drug screening, some of which are currently under review. While
+            much of my research so far has been computational, I hope to take these findings beyond the screen
+            and explore them in experimental, wet-lab settings. My broader research interests lie in oncology
+            and neuroscience — understanding the molecular mechanisms underlying complex diseases.
+          </p>
+          <p>
+            Beyond academics, I belong to the world of fiction. I am an avid reader, a devoted fan of the
+            television shows I watch and the music I listen to — and when my love for these things becomes a
+            little too overwhelming, I try to draw them out. I started drawing long before I knew how to
+            write, and I suppose some things never really change.
+          </p>
+        </div>
+        <figure class="frame about-photo">
+          <img src="assets/photo.jpg" onerror="this.closest('figure').style.display='none'" alt="Portrait of Nazia Zarin seated at a café table beneath a lemon tree">
+        </figure>
+      </div>
+    </section>
 
     <!-- ============ RESEARCH ============ -->
     <section id="research">
