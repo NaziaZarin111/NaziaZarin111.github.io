@@ -16,7 +16,6 @@ Personal academic website for MS/PhD and Erasmus Mundus funding applications. A 
 ## Before going live — personalize
 
 - **Google Scholar**: create a profile and add a button next to ResearchGate.
-- **Photo**: an optional professional headshot can go in the hero (`assets/photo.jpg`).
 - **Conference photos**: drop images at `assets/photos/iybc-2026.jpg`, `icles-2025.jpg`, `icls-2025.jpg`, `ruec-2025.jpg`, then replace each placeholder `<div class="ph">…</div>` in `index.html` with `<img src="assets/photos/….jpg" alt="Nazia presenting her poster at …">`.
 - **Artwork**: drop scans at `assets/art/01.jpg` … `03.jpg` and swap the placeholders the same way.
 - **Bookshelf**: the "Beyond the lab" section has a placeholder note — add her favorite titles when she picks them.
