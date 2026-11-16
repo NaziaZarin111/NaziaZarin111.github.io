@@ -224,10 +224,11 @@ h2{
 .gallery.art{grid-template-columns:1fr}
 .gallery.art img{aspect-ratio:auto}
 .gallery.posters img{aspect-ratio:3/4; object-position:top; background:#fff}
-.gallery.lab{gap:10px; max-width:720px}
-.gallery.lab .frame{position:relative; cursor:zoom-in; padding:6px 6px 8px}
-.gallery.lab figcaption{font-size:.7rem}
-.gallery.lab .lb-only{display:none}
+.gallery.lb{gap:10px; max-width:720px}
+.gallery.lb .frame{position:relative; cursor:zoom-in; padding:6px 6px 8px}
+.gallery.lb figcaption{font-size:.7rem}
+.gallery.lb .lb-only{display:none}
+.gallery.certs img{aspect-ratio:4/3; background:#fff}
 .morebadge{position:absolute; right:13px; top:13px; font-family:var(--font-pixel); font-size:.56rem; color:#fff; background:rgba(16,28,20,.74); padding:5px 8px; border-radius:4px; pointer-events:none; letter-spacing:.06em}
 /* ---------- Lightbox ---------- */
 .lightbox{position:fixed; inset:0; z-index:60; display:none; flex-direction:column; align-items:center; justify-content:center; gap:13px; background:rgba(10,18,12,.92); padding:24px}
@@ -557,7 +558,7 @@ footer .prose{color:var(--muted)}
         </li>
         <li>
           <span class="when">Dec 2025 · Jagannath University, Dhaka</span>
-          <h3>International Conference on Life and Earth Sciences</h3>
+          <h3>International Conference on Life and Earth Sciences for Sustainable Development (ICLESSD)</h3>
           <p>Poster: <b>“Exploring Molecular Signatures and Therapeutic Agents of Triple-Negative Breast Cancer and Type 2 Diabetes.”</b> N. Zarin (presenter), M. Nishad.</p>
         </li>
         <li>
@@ -566,7 +567,7 @@ footer .prose{color:var(--muted)}
           <p>Poster: <b>“Exploring Molecular Signatures and Therapeutic Agents of Non-Small Cell Lung Cancer and Tuberculosis.”</b> N. Zarin (presenter).</p>
         </li>
         <li>
-          <span class="when">Jul 2025 · Rajshahi University</span>
+          <span class="when">Sep 2025 · Rajshahi University</span>
           <h3>RUEC 1st International Research Conference</h3>
           <p>Poster: <b>“Exploring Molecular Signatures and Therapeutic Agents of Type 2 Diabetes and Parkinson's Disease.”</b> N. Zarin (presenter), T. H. Tanha, M. Nishad, S. Haque.</p>
         </li>
@@ -584,7 +585,7 @@ footer .prose{color:var(--muted)}
           <a href="assets/posters/icles-2025-tnbc-t2d.pdf" target="_blank" rel="noopener">
             <img src="assets/posters/thumbs/icles-2025.jpg" onerror="this.closest('figure').style.display='none'" alt="Poster: Exploring Molecular Signatures and Therapeutic Agents of Triple-Negative Breast Cancer and Type 2 Diabetes, presented at ICLES 2025">
           </a>
-          <figcaption><b>ICLES 2025</b> — TNBC &amp; type 2 diabetes · <a href="assets/posters/icles-2025-tnbc-t2d.pdf" target="_blank" rel="noopener">open PDF</a></figcaption>
+          <figcaption><b>ICLESSD 2025</b> — TNBC &amp; type 2 diabetes · <a href="assets/posters/icles-2025-tnbc-t2d.pdf" target="_blank" rel="noopener">open PDF</a></figcaption>
         </figure>
         <figure class="frame">
           <a href="assets/posters/icls-2025-nsclc-tb.pdf" target="_blank" rel="noopener">
@@ -647,7 +648,7 @@ footer .prose{color:var(--muted)}
         <span class="tag">centrifugation &amp; sample prep</span><span class="tag">biosafety cabinet technique</span>
         <span class="tag">micropipetting</span>
       </div>
-      <div class="gallery lab">
+      <div class="gallery lab lb">
         <figure class="frame">
           <img src="assets/lab/01.jpg" style="object-position:center 30%" onerror="this.closest('figure').style.display='none'" alt="Nazia Zarin loading a 96-well ELISA plate with a micropipette at GenX Precision Molecular Diagnostics">
           <figcaption><b>Immunoassay</b> — loading a 96-well ELISA plate</figcaption>
@@ -720,6 +721,14 @@ footer .prose{color:var(--muted)}
             </ul>
           </div>
           <div class="edu-item">
+            <span class="when">Aug – Oct 2024 · 80 hours</span>
+            <h3>Database Training — MySQL / Oracle / SQL</h3>
+            <p><b>EDGE Project, Bangladesh Computer Council (ICT Division)</b> · Dept. of CSE, University of Barishal</p>
+            <ul>
+              <li>Government-certified 80-hour training in relational databases and SQL</li>
+            </ul>
+          </div>
+          <div class="edu-item">
             <span class="when">Jun 2024 · Dhaka</span>
             <h3>Molecular Biology Training</h3>
             <p><b>Child Health Research Foundation (CHRF)</b></p>
@@ -731,6 +740,36 @@ footer .prose{color:var(--muted)}
           </div>
         </div>
       </div>
+
+      <h2 style="border:none; font-size:1.2rem; margin:44px 0 0">Certificates</h2>
+      <div class="gallery certs lb">
+        <figure class="frame">
+          <img src="assets/certs/iybc-2026.jpg" onerror="this.closest('figure').style.display='none'" alt="Certificate of participation, 6th International Young Biotechnologist Congress and Future Biotechnologists Summit 2026, organized by NYBB with NIB and UIU">
+          <figcaption><b>IYBC 2026</b> — 6th Int. Young Biotechnologist Congress &amp; Future Biotechnologists Summit (NYBB · NIB · UIU)</figcaption>
+        </figure>
+        <figure class="frame">
+          <img src="assets/certs/edge-sql-2024.jpg" onerror="this.closest('figure').style.display='none'" alt="Certificate for completing 80-hour Database MySQL Oracle SQL training under the EDGE Project of Bangladesh Computer Council, ICT Division">
+          <figcaption><b>Database training</b> — MySQL/Oracle/SQL, 80 h · EDGE, Bangladesh Computer Council</figcaption>
+        </figure>
+        <figure class="frame">
+          <img src="assets/certs/chrf-2024.jpg" onerror="this.closest('figure').style.display='none'" alt="Certificate of accomplishment for hands-on Molecular Biology training at the Child Health Research Foundation, June 2024">
+          <figcaption><b>CHRF 2024</b> — hands-on molecular biology training</figcaption>
+        </figure>
+        <figure class="frame">
+          <span class="morebadge">+2 more</span>
+          <img src="assets/certs/ruec-2025.jpg" onerror="this.closest('figure').style.display='none'" alt="Certificate of participation as presenting author at the RUEC 1st International Research Conference 2025, University of Rajshahi">
+          <figcaption><b>RUEC 2025</b> — presenting author, University of Rajshahi</figcaption>
+        </figure>
+        <figure class="frame lb-only">
+          <img src="assets/certs/icles-2025.jpg" loading="lazy" onerror="this.closest('figure').style.display='none'" alt="Certificate of participation as poster presenter at ICLESSD-2025, Jagannath University, Dhaka">
+          <figcaption><b>ICLESSD 2025</b> — poster presenter, Jagannath University</figcaption>
+        </figure>
+        <figure class="frame lb-only">
+          <img src="assets/certs/icls-2025.jpg" loading="lazy" onerror="this.closest('figure').style.display='none'" alt="Certificate of participation at the International Conference on Life Sciences 2025, SUST Sylhet">
+          <figcaption><b>ICLS 2025</b> — participation, SUST Sylhet</figcaption>
+        </figure>
+      </div>
+      <p class="gallery-note">Click any certificate to view it full size.</p>
     </section>
 
     <!-- ============ SKILLS ============ -->
@@ -785,6 +824,7 @@ footer .prose{color:var(--muted)}
             <span class="tag">molecular docking</span><span class="tag">MD simulation</span>
             <span class="tag">ADMET screening</span><span class="tag">drug–gene interaction databases</span>
             <span class="tag">survival analysis</span><span class="tag">TF &amp; miRNA network analysis</span>
+            <span class="tag">SQL (MySQL &amp; Oracle)</span>
           </div>
           <p class="where" style="margin-top:16px">And on paper</p>
           <div class="toolcloud">
@@ -954,7 +994,7 @@ footer .prose{color:var(--muted)}
   </div>
 </footer>
 
-<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Lab photo viewer">
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Photo viewer">
   <button class="lb-btn lb-close" type="button" aria-label="Close">✕</button>
   <button class="lb-btn lb-prev" type="button" aria-label="Previous photo">‹</button>
   <img alt="">
@@ -1007,26 +1047,27 @@ footer .prose{color:var(--muted)}
 })();
 // Lab photo lightbox (independent of the reduced-motion guard above)
 (function(){
-  var gal = document.querySelector('.gallery.lab');
   var lb = document.getElementById('lightbox');
-  if (!gal || !lb) return;
-  var frames = Array.prototype.slice.call(gal.querySelectorAll('.frame'));
-  var slides = frames.map(function(f){
-    var img = f.querySelector('img');
-    var cap = f.querySelector('figcaption');
-    return {src: img.getAttribute('src'), alt: img.alt, cap: cap ? cap.innerHTML : ''};
-  });
+  if (!lb) return;
   var lbImg = lb.querySelector('img'), lbCap = lb.querySelector('.lb-cap'), lbCount = lb.querySelector('.lb-count');
-  var cur = 0;
+  var slides = [], cur = 0;
   function show(i){
     cur = (i + slides.length) % slides.length;
     lbImg.src = slides[cur].src; lbImg.alt = slides[cur].alt;
     lbCap.innerHTML = slides[cur].cap;
     lbCount.textContent = (cur + 1) + ' / ' + slides.length;
   }
-  function openLb(i){ show(i); lb.classList.add('open'); document.body.style.overflow = 'hidden'; }
+  function openLb(set, i){ slides = set; show(i); lb.classList.add('open'); document.body.style.overflow = 'hidden'; }
   function closeLb(){ lb.classList.remove('open'); document.body.style.overflow = ''; }
-  frames.forEach(function(f, i){ f.addEventListener('click', function(){ openLb(i); }); });
+  Array.prototype.forEach.call(document.querySelectorAll('.gallery.lb'), function(gal){
+    var frames = Array.prototype.slice.call(gal.querySelectorAll('.frame'));
+    var set = frames.map(function(f){
+      var img = f.querySelector('img');
+      var cap = f.querySelector('figcaption');
+      return {src: img.getAttribute('src'), alt: img.alt, cap: cap ? cap.innerHTML : ''};
+    });
+    frames.forEach(function(f, i){ f.addEventListener('click', function(){ openLb(set, i); }); });
+  });
   lb.querySelector('.lb-prev').addEventListener('click', function(e){ e.stopPropagation(); show(cur - 1); });
   lb.querySelector('.lb-next').addEventListener('click', function(e){ e.stopPropagation(); show(cur + 1); });
   lb.querySelector('.lb-close').addEventListener('click', closeLb);
